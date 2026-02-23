@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>The Best Hotels in Paris | Condé Nast Traveler</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cnt-gold: #9E6D05;
+  --cnt-gold-hover: #AB7605;
+  --cnt-gold-light: rgba(158, 109, 5, 0.08);
+  --cnt-gold-subtle: rgba(158, 109, 5, 0.04);
+  --cnt-black: #000000;
+  --cnt-dark: #1A1A1A;
+  --cnt-text: #333333;
+  --cnt-text-secondary: #666666;
+  --cnt-text-muted: #979797;
+  --cnt-border: #D6D6D6;
+  --cnt-border-light: #E9E9E9;
+  --cnt-bg: #FFFFFF;
+  --cnt-bg-warm: #FAFAF8;
+  --cnt-red: #B01D20;
+  --cnt-urgent: #C44D3F;
+
+  --font-display: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-ui: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --provider-expedia: #FBCC33;
+  --provider-booking: #003580;
+  --provider-fora: #1A8A7D;
+  --provider-chase: #117ACA;
+  --provider-amex: #006FCF;
+  --provider-direct: #9E6D05;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-ui);
+  color: var(--cnt-text);
+  background: var(--cnt-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* ===== MOBILE NAV ===== */
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--cnt-bg);
+  border-bottom: 1px solid var(--cnt-border-light);
+}
+
+.nav-upper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  padding-top: 42px;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--cnt-black);
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: none;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-search {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--cnt-black);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-search svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+
+.nav-subscribe {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--cnt-bg);
+  background: var(--cnt-black);
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+/* ===== ARTICLE HEADER ===== */
+.article-header {
+  padding: 32px 20px 28px;
+  text-align: center;
+}
+
+.article-category {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--cnt-gold);
+  margin-bottom: 16px;
+  display: inline-block;
+  position: relative;
+}
+
+.article-category::before,
+.article-category::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 28px;
+  height: 1px;
+  background: var(--cnt-gold);
+  opacity: 0.35;
+}
+
+.article-category::before { right: calc(100% + 10px); }
+.article-category::after { left: calc(100% + 10px); }
+
+.article-title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--cnt-black);
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.article-deck {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--cnt-text-secondary);
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.article-byline {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--cnt-text-muted);
+  letter-spacing: 0.2px;
+}
+
+.article-byline strong {
+  color: var(--cnt-black);
+  font-weight: 600;
+}
+
+.article-divider {
+  width: 48px;
+  height: 1px;
+  background: var(--cnt-border);
+  margin: 28px auto 0;
+}
+
+/* ===== HOTEL LISTINGS ===== */
+.hotel-listings {
+  padding: 16px 20px 48px;
+}
+
+.hotel-card {
+  margin-bottom: 48px;
+}
+
+.hotel-card:last-child {
+  margin-bottom: 0;
+}
+
+.hotel-number {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--cnt-gold);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hotel-number::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--cnt-border-light);
+}
+
+.hotel-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: #F0EDE8;
+}
+
+.hotel-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hotel-badge-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  gap: 6px;
+}
+
+.hotel-badge {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.94);
+  color: var(--cnt-gold);
+  padding: 5px 10px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hotel-content {}
+
+.hotel-name {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--cnt-black);
+  margin-bottom: 4px;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+}
+
+.hotel-location {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--cnt-text-muted);
+  margin-bottom: 14px;
+  letter-spacing: 0.1px;
+}
+
+.hotel-description {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--cnt-text-secondary);
+  margin-bottom: 20px;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+.hotel-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hotel-price-hint {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--cnt-text-muted);
+}
+
+.hotel-price-hint span {
+  font-weight: 600;
+  color: var(--cnt-black);
+  font-size: 17px;
+}
+
+.btn-compare {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--cnt-gold);
+  background: transparent;
+  border: 1.5px solid var(--cnt-gold);
+  padding: 14px 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.btn-compare:active {
+  background: var(--cnt-gold);
+  color: var(--cnt-bg);
+}
+
+.btn-compare .arrow {
+  font-size: 13px;
+}
+
+/* ===== MODAL — FULL-SCREEN TAKEOVER (inside phone) ===== */
+.modal-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 852px;
+  background: var(--cnt-bg);
+  z-index: 2000;
+  transform: translateY(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.3s ease,
+              visibility 0s 0.4s;
+}
+
+.modal-overlay.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.3s ease,
+              visibility 0s 0s;
+}
+
+@media (max-width: 430px) {
+  .modal-overlay {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+  }
+}
+
+.modal {
+  background: var(--cnt-bg);
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modal-drag-indicator {
+  display: none;
+}
+
+/* Modal Header */
+.modal-header {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--cnt-border-light);
+  flex-shrink: 0;
+}
+
+.modal-hotel-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.modal-hotel-thumb {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+.modal-hotel-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.modal-hotel-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cnt-black);
+  line-height: 1.2;
+  margin-bottom: 2px;
+  letter-spacing: -0.3px;
+}
+
+.modal-hotel-location {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--cnt-text-muted);
+  margin-bottom: 6px;
+}
+
+.modal-badges {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.modal-badge {
+  font-family: var(--font-ui);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--cnt-gold);
+  background: var(--cnt-gold-light);
+  padding: 3px 6px;
+  border: 1px solid rgba(158, 109, 5, 0.18);
+}
+
+/* Date & Guest Picker */
+.modal-picker-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--cnt-border-light);
+  overflow: hidden;
+}
+
+.picker-field {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 12px;
+  cursor: pointer;
+  position: relative;
+  min-width: 0;
+}
+
+.picker-field:not(:last-child) {
+  border-right: 1px solid var(--cnt-border-light);
+}
+
+.picker-field-label {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--cnt-text-muted);
+  margin-bottom: 2px;
+}
+
+.picker-field-value {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cnt-black);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.picker-field-value svg {
+  width: 13px;
+  height: 13px;
+  stroke: var(--cnt-gold);
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+.picker-field input[type="date"] {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cnt-black);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  width: 100%;
+  outline: none;
+}
+
+.picker-field input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.picker-bottom-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--cnt-border-light);
+}
+
+.picker-nights {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--cnt-gold);
+  font-weight: 500;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  background: var(--cnt-gold-subtle);
+  border-right: 1px solid var(--cnt-border-light);
+}
+
+/* Guest Selector */
+.guest-selector {
+  position: relative;
+}
+
+.guest-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--cnt-bg);
+  border: 1px solid var(--cnt-border-light);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  z-index: 10;
+  padding: 14px;
+  display: none;
+  min-width: 180px;
+}
+
+.guest-dropdown.active {
+  display: block;
+}
+
+.guest-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.guest-stepper-label {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--cnt-text-secondary);
+  font-weight: 500;
+}
+
+.guest-stepper-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.guest-stepper-btn {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--cnt-border);
+  background: var(--cnt-bg);
+  font-family: var(--font-ui);
+  font-size: 18px;
+  color: var(--cnt-text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.guest-stepper-btn:active:not(:disabled) {
+  border-color: var(--cnt-gold);
+  color: var(--cnt-gold);
+}
+
+.guest-stepper-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.guest-stepper-count {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--cnt-black);
+  min-width: 20px;
+  text-align: center;
+}
+
+.modal-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px 8px;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--cnt-border-light);
+}
+
+.modal-topbar-title {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--cnt-text-muted);
+}
+
+.modal-close {
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cnt-black);
+  -webkit-tap-highlight-color: transparent;
+  margin-right: -8px;
+}
+
+.modal-close svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+
+/* Scrollable modal body */
+.modal-scroll {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal-scroll::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Provider Cards — Mobile Stack */
+.modal-providers {
+  padding: 0 20px;
+}
+
+.provider-row {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--cnt-border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.provider-row:last-child {
+  border-bottom: none;
+}
+
+.provider-row.best-value {
+  background: var(--cnt-gold-subtle);
+  margin: 0 -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.provider-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.provider-identity {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  min-width: 0;
+}
+
+.provider-wordmark {
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.provider-best-badge {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--cnt-bg);
+  background: var(--cnt-gold);
+  padding: 2px 7px;
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.provider-pricing-compact {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.provider-nightly {
+  font-family: var(--font-ui);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--cnt-black);
+  line-height: 1;
+}
+
+.provider-nightly small {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--cnt-text-muted);
+}
+
+.provider-total {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--cnt-text-muted);
+  margin-top: 2px;
+}
+
+/* Provider Details */
+.provider-details {
+  min-width: 0;
+}
+
+.provider-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.perk-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--cnt-text-secondary);
+}
+
+.perk-icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.perk-icon svg {
+  width: 13px;
+  height: 13px;
+}
+
+.perk-loyalty { color: var(--provider-fora); }
+.perk-card { color: #6B5B8A; }
+.perk-availability { color: var(--cnt-text-muted); }
+.perk-availability.urgent { color: var(--cnt-urgent); font-weight: 600; }
+
+.btn-deal {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--cnt-gold);
+  background: transparent;
+  border: 1.5px solid var(--cnt-gold);
+  padding: 10px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.btn-deal:active {
+  background: var(--cnt-gold);
+  color: var(--cnt-bg);
+}
+
+.btn-deal .arrow {
+  font-size: 12px;
+}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 14px 20px;
+  border-top: 1px solid var(--cnt-border-light);
+  background: var(--cnt-bg-warm);
+}
+
+.modal-footer p {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--cnt-text-muted);
+  line-height: 1.55;
+}
+
+.modal-footer p + p {
+  margin-top: 4px;
+}
+
+.modal-footer .trust-signal {
+  color: var(--cnt-gold);
+  font-weight: 500;
+}
+
+/* ===== ARTICLE FOOTER ===== */
+.article-footer {
+  padding: 0 20px 48px;
+}
+
+.article-footer-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--cnt-border-light);
+  margin-bottom: 24px;
+}
+
+.article-footer-text {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--cnt-text-muted);
+  line-height: 1.65;
+  font-style: italic;
+}
+
+/* ===== SITE FOOTER ===== */
+.site-footer {
+  background: var(--cnt-dark);
+  padding: 36px 20px;
+  text-align: center;
+}
+
+.site-footer-logo {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--cnt-bg);
+  margin-bottom: 14px;
+}
+
+.site-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  list-style: none;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.site-footer-links a {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+}
+
+.site-footer-copy {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  color: rgba(255,255,255,0.25);
+}
+
+/* ===== SCROLLBAR ===== */
+.modal::-webkit-scrollbar {
+  width: 0;
+}
+
+/* ===== FRAME WRAPPER (iPhone 15 — 393×852) ===== */
+body {
+  background: #E5E5E5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 32px 0;
+}
+
+.phone-frame {
+  width: 393px;
+  height: 852px;
+  margin: 0 auto;
+  background: var(--cnt-bg);
+  position: relative;
+  border-radius: 44px;
+  box-shadow:
+    0 0 0 10px #1A1A1A,
+    0 0 0 12px #333,
+    0 20px 60px rgba(0,0,0,0.3);
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.phone-frame::-webkit-scrollbar {
+  width: 0;
+}
+
+.phone-frame::before {
+  content: '';
+  position: sticky;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 126px;
+  height: 34px;
+  background: #1A1A1A;
+  border-radius: 0 0 20px 20px;
+  z-index: 200;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  pointer-events: none;
+}
+
+@media (max-width: 430px) {
+  body {
+    background: var(--cnt-bg);
+    padding: 0;
+  }
+  .phone-frame {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .phone-frame::before {
+    display: none;
+  }
+}
+
+@media (hover: hover) {
+  .btn-compare:hover,
+  .btn-deal:hover {
+    background: var(--cnt-gold);
+    color: var(--cnt-bg);
+  }
+  .btn-compare:hover .arrow,
+  .btn-deal:hover .arrow {
+    transform: translateX(3px);
+  }
+  .sort-btn:hover {
+    color: var(--cnt-gold);
+  }
+  .nav-logo:hover {
+    color: var(--cnt-gold);
+  }
+  .nav-subscribe:hover {
+    background: var(--cnt-gold);
+  }
+  .nav-search:hover {
+    color: var(--cnt-gold);
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="phone-frame">
+
+  <!-- NAV -->
+  <nav class="nav-bar">
+    <div class="nav-upper">
+      <a class="nav-logo" href="#">Condé Nast Traveler</a>
+      <ul class="nav-links">
+        <li><a href="#">Inspiration</a></li>
+        <li><a href="#">Destinations</a></li>
+        <li><a href="#">Places to Stay</a></li>
+        <li><a href="#">News &amp; Advice</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="nav-search" aria-label="Search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="nav-subscribe">Subscribe</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ARTICLE HEADER -->
+  <header class="article-header">
+    <div class="article-category">Gold List</div>
+    <h1 class="article-title">The Best Hotels in Paris</h1>
+    <p class="article-deck">Our editors' picks for where to stay in the City of Light, from palatial grandes dames to design-forward boutiques.</p>
+    <p class="article-byline"><strong>By CNT Editors</strong> &nbsp;&middot;&nbsp; January 7, 2026</p>
+    <div class="article-divider"></div>
+  </header>
+
+  <!-- HOTEL LISTINGS -->
+  <section class="hotel-listings" id="hotelListings"></section>
+
+  <!-- ARTICLE FOOTER -->
+  <footer class="article-footer">
+    <div class="article-footer-divider"></div>
+    <p class="article-footer-text">Hotels featured on this page are independently selected by our editors. When you book through our partner links, Condé Nast Traveler may earn a commission.</p>
+  </footer>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer-logo">Condé Nast Traveler</div>
+    <ul class="site-footer-links">
+      <li><a href="#">About</a></li>
+      <li><a href="#">Newsletters</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="#">Accessibility</a></li>
+    </ul>
+    <p class="site-footer-copy">&copy; 2026 Condé Nast. All rights reserved.</p>
+  </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="modal-topbar">
+      <span class="modal-topbar-title">Compare Prices</span>
+      <button class="modal-close" id="modalClose" aria-label="Close">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div id="modalHeader" class="modal-header"></div>
+      <div class="modal-scroll">
+        <div class="modal-providers" id="modalProviders"></div>
+      <div class="modal-footer">
+        <p>Prices shown are estimates for the selected dates. Click through to provider for final pricing and availability.</p>
+        <p><span class="trust-signal">Hotels on this page are independently selected by our editors.</span></p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- .phone-frame -->
+
+<script>
+const hotelsData = [
+  {
+    id: 1,
+    name: "Le Bristol Paris",
+    location: "112 Rue du Faubourg Saint-Honoré, 8th Arr.",
+    badge: "Gold List 2026",
+    secondaryBadge: null,
+    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&h=500&fit=crop",
+    description: "A Parisian icon on the Faubourg Saint-Honoré, Le Bristol combines 18th-century grandeur with genuinely warm service. The rooftop pool and Epicure\u2019s three Michelin stars make leaving nearly impossible.",
+    startingPrice: 479,
+    dates: "May 10 \u2013 14, 2026 \u00b7 4 nights \u00b7 2 guests",
+    providers: [
+      { name: "Chase Travel", logoClass: "chase", logoText: "C", nightly: 479, total: 1916, availability: "Available", availabilityUrgent: false, loyalty: null, cardPerk: "Chase Sapphire Reserve: 5x pts + $50 hotel credit", advisorPerk: null, loyaltyValue: 0, availabilityScore: 0 },
+      { name: "Expedia", logoClass: "expedia", logoText: "E", nightly: 485, total: 1940, availability: "Available", availabilityUrgent: false, loyalty: "OneKey \u2014 earn 1,940 pts", cardPerk: null, advisorPerk: null, loyaltyValue: 1940, availabilityScore: 0 },
+      { name: "Fora Travel", logoClass: "fora", logoText: "F", nightly: 485, total: 1940, availability: "Available", availabilityUrgent: false, loyalty: null, cardPerk: null, advisorPerk: "Fora advisor perks + $100 amenity credit", loyaltyValue: 100, availabilityScore: 0 },
+      { name: "Amex Travel", logoClass: "amex", logoText: "A", nightly: 485, total: 1940, availability: "Available", availabilityUrgent: false, loyalty: null, cardPerk: "Amex Platinum: 5x pts + Fine Hotels & Resorts \u2014 room upgrade, late checkout, $100 property credit", advisorPerk: null, loyaltyValue: 2100, availabilityScore: 0 },
+      { name: "Booking.com", logoClass: "booking", logoText: "B", nightly: 492, total: 1968, availability: "3 rooms left", availabilityUrgent: false, loyalty: null, cardPerk: null, advisorPerk: null, loyaltyValue: 0, availabilityScore: 3 },
+      { name: "Hotel Direct", logoClass: "direct", logoText: "H", nightly: 510, total: 2040, availability: "Available", availabilityUrgent: false, loyalty: "Marriott Bonvoy \u2014 earn 5,200 pts", cardPerk: "Platinum: complimentary breakfast + room upgrade", advisorPerk: null, loyaltyValue: 5200, availabilityScore: 0 }
+    ]
+  },
+  {
+    id: 2,
+    name: "Hôtel Plaza Athénée",
+    location: "25 Avenue Montaigne, 8th Arr.",
+    badge: "Editor\u2019s Pick",
+    secondaryBadge: null,
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=500&fit=crop",
+    description: "The Dorchester Collection\u2019s Parisian jewel on Avenue Montaigne delivers staggering Art Deco beauty and impeccable service. Jean Imbert\u2019s restaurant and the dreamy Dior Spa make this a destination in itself.",
+    startingPrice: 689,
+    dates: "May 10 \u2013 14, 2026 \u00b7 4 nights \u00b7 2 guests",
+    providers: [
+      { name: "Chase Travel", logoClass: "chase", logoText: "C", nightly: 689, total: 2756, availability: "Available", availabilityUrgent: false, loyalty: null, cardPerk: "Chase Sapphire Reserve: 5x pts + $50 hotel credit", advisorPerk: null, loyaltyValue: 0, availabilityScore: 0 },
+      { name: "Expedia", logoClass: "expedia", logoText: "E", nightly: 695, total: 2780, availability: "Only 2 left at this price", availabilityUrgent: true, loyalty: "OneKey \u2014 earn 2,780 pts", cardPerk: null, advisorPerk: null, loyaltyValue: 2780, availabilityScore: 2 },
+      { name: "Fora Travel", logoClass: "fora", logoText: "F", nightly: 695, total: 2780, availability: "Available", availabilityUrgent: false, loyalty: null, cardPerk: null, advisorPerk: "Fora advisor + $150 amenity credit", loyaltyValue: 150, availabilityScore: 0 },
+      { name: "Amex Travel", logoClass: "amex", logoText: "A", nightly: 695, total: 2780, availability: "Available", availabilityUrgent: false, loyalty: null, cardPerk: "Amex Platinum: 5x pts + FHR \u2014 upgrade, late checkout, $100 credit", advisorPerk: null, loyaltyValue: 2100, availabilityScore: 0 },
+      { name: "Booking.com", logoClass: "booking", logoText: "B", nightly: 710, total: 2840, availability: "Only 1 left!", availabilityUrgent: true, loyalty: null, cardPerk: null, advisorPerk: null, loyaltyValue: 0, availabilityScore: 1 },
+      { name: "Hotel Direct", logoClass: "direct", logoText: "H", nightly: 725, total: 2900, availability: "Available", availabilityUrgent: false, loyalty: "Dorchester Diamond Club \u2014 earn 3,400 pts", cardPerk: null, advisorPerk: null, loyaltyValue: 3400, availabilityScore: 0 }
+    ]
+  },
+  {
+    id: 3,
+    name: "The Brach Paris",
+    location: "1-2 Rue Jean Richepin, 16th Arr.",
+    badge: "Gold List 2026",
+    secondaryBadge: null,
+    image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&h=500&fit=crop",
+    description: "Philippe Starck\u2019s design-forward gem in the 16th is unlike anything else in Paris. The rooftop garden, sports club, and effortlessly cool interiors attract a younger, style-conscious crowd.",
+    startingPrice: 338,
+    dates: "May 10 \u2013 14, 2026 \u00b7 4 nights \u00b7 2 guests",
+    providers: [
+      { name: "Booking.com", logoClass: "booking", logoText: "B", nightly: 338, total: 1352, availability: "Available", availabilityUrgent: false, loyalty: "Genius discount applied", cardPerk: null, advisorPerk: null, loyaltyValue: 50, availabilityScore: 0 },
+      { name: "Chase Travel", logoClass: "chase", logoText: "C", nightly: 342, total: 1368, availability: "Available", availabilityUrgent: false, loyalty: null, cardPerk: "Chase Sapphire Reserve: 5x pts + $50 credit", advisorPerk: null, loyaltyValue: 0, availabilityScore: 0 },
+      { name: "Expedia", logoClass: "expedia", logoText: "E", nightly: 345, total: 1380, availability: "Available", availabilityUrgent: false, loyalty: "OneKey \u2014 earn 1,380 pts", cardPerk: null, advisorPerk: null, loyaltyValue: 1380, availabilityScore: 0 },
+      { name: "Fora Travel", logoClass: "fora", logoText: "F", nightly: 345, total: 1380, availability: "Available", availabilityUrgent: false, loyalty: null, cardPerk: null, advisorPerk: "Fora advisor + $75 amenity credit", loyaltyValue: 75, availabilityScore: 0 },
+      { name: "Amex Travel", logoClass: "amex", logoText: "A", nightly: 345, total: 1380, availability: "Available", availabilityUrgent: false, loyalty: null, cardPerk: "Amex Platinum: 5x pts + FHR benefits", advisorPerk: null, loyaltyValue: 1500, availabilityScore: 0 },
+      { name: "Hotel Direct", logoClass: "direct", logoText: "H", nightly: 365, total: 1460, availability: "Available", availabilityUrgent: false, loyalty: null, cardPerk: null, advisorPerk: null, loyaltyValue: 0, availabilityScore: 0 }
+    ]
+  }
+];
+
+const icons = {
+  loyalty: '<span class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#1A8A7D" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>',
+  card: '<span class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#6B5B8A" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>',
+  advisor: '<span class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#9E6D05" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>',
+  availability: '<span class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#979797" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>',
+  availabilityUrgent: '<span class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C44D3F" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>',
+  calendar: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>'
+};
+
+function renderHotels() {
+  const container = document.getElementById('hotelListings');
+  container.innerHTML = hotelsData.map((hotel, index) => `
+    <div class="hotel-card">
+      <div class="hotel-number">${index + 1}</div>
+      <div class="hotel-image-wrap">
+        <img src="${hotel.image}" alt="${hotel.name}" loading="lazy">
+        <div class="hotel-badge-overlay">
+          <span class="hotel-badge">${hotel.badge}</span>
+          ${hotel.secondaryBadge ? `<span class="hotel-badge">${hotel.secondaryBadge}</span>` : ''}
+        </div>
+      </div>
+      <div class="hotel-content">
+        <h2 class="hotel-name">${hotel.name}</h2>
+        <p class="hotel-location">${hotel.location}</p>
+        <p class="hotel-description">${hotel.description}</p>
+        <div class="hotel-actions">
+          <div class="hotel-price-hint">From <span>$${hotel.startingPrice}</span>/night</div>
+          <button class="btn-compare" onclick="openModal(${hotel.id})">
+            Compare Prices &amp; Rewards <span class="arrow">&rarr;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+let currentHotelId = null;
+let currentCheckIn = '2026-05-10';
+let currentCheckOut = '2026-05-14';
+let currentGuests = 2;
+
+function getNights() {
+  const d1 = new Date(currentCheckIn);
+  const d2 = new Date(currentCheckOut);
+  return Math.max(Math.round((d2 - d1) / (1000 * 60 * 60 * 24)), 1);
+}
+
+function formatDate(dateStr) {
+  const d = new Date(dateStr + 'T12:00:00');
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+
+function getAdjustedProvider(baseProvider, baseNights) {
+  const nights = getNights();
+  const guestMultiplier = currentGuests > 2 ? 1 + ((currentGuests - 2) * 0.15) : 1;
+  const seed = baseProvider.name.length;
+  const dateVariation = nights !== baseNights ? (0.95 + (seed % 10) * 0.01) : 1;
+  const adjustedNightly = Math.round(baseProvider.nightly * guestMultiplier * dateVariation);
+  const adjustedTotal = adjustedNightly * nights;
+  let availability = baseProvider.availability;
+  let availabilityUrgent = baseProvider.availabilityUrgent;
+  if (nights > 5 && baseProvider.availabilityScore > 0) {
+    availability = "Sold out for these dates";
+    availabilityUrgent = true;
+  }
+  let loyalty = baseProvider.loyalty;
+  if (loyalty && loyalty.includes('earn')) {
+    const ptsMatch = loyalty.match(/([\d,]+)\s*pts/);
+    if (ptsMatch) {
+      const basePts = parseInt(ptsMatch[1].replace(',', ''));
+      const adjustedPts = Math.round(basePts * (nights / baseNights) * guestMultiplier);
+      loyalty = loyalty.replace(ptsMatch[1], adjustedPts.toLocaleString());
+    }
+  }
+  return { ...baseProvider, nightly: adjustedNightly, total: adjustedTotal, availability, availabilityUrgent, loyalty };
+}
+
+let savedScrollTop = 0;
+
+function openModal(hotelId) {
+  currentHotelId = hotelId;
+  renderModal();
+
+  const frame = document.querySelector('.phone-frame');
+  const overlay = document.getElementById('modalOverlay');
+  savedScrollTop = frame.scrollTop;
+  overlay.style.top = savedScrollTop + 'px';
+  overlay.classList.add('active');
+  frame.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  const frame = document.querySelector('.phone-frame');
+  const overlay = document.getElementById('modalOverlay');
+  overlay.classList.remove('active');
+  frame.style.overflow = '';
+  currentHotelId = null;
+}
+
+function renderModal() {
+  const hotel = hotelsData.find(h => h.id === currentHotelId);
+  if (!hotel) return;
+  const nights = getNights();
+
+  document.getElementById('modalHeader').innerHTML = `
+    <div class="modal-hotel-row">
+      <img class="modal-hotel-thumb" src="${hotel.image}" alt="${hotel.name}">
+      <div class="modal-hotel-info">
+        <h3 class="modal-hotel-name">${hotel.name}</h3>
+        <p class="modal-hotel-location">${hotel.location}</p>
+        <div class="modal-badges">
+          <span class="modal-badge">${hotel.badge}</span>
+          ${hotel.secondaryBadge ? `<span class="modal-badge">${hotel.secondaryBadge}</span>` : ''}
+        </div>
+      </div>
+    </div>
+    <div class="modal-picker-row">
+      <div class="picker-field">
+        <span class="picker-field-label">Check in</span>
+        <div class="picker-field-value">
+          <input type="date" id="checkInDate" value="${currentCheckIn}">
+        </div>
+      </div>
+      <div class="picker-field">
+        <span class="picker-field-label">Check out</span>
+        <div class="picker-field-value">
+          <input type="date" id="checkOutDate" value="${currentCheckOut}">
+        </div>
+      </div>
+    </div>
+    <div class="modal-picker-row picker-bottom-row">
+      <div class="picker-nights">${nights} night${nights !== 1 ? 's' : ''}</div>
+      <div class="picker-field guest-selector" id="guestSelector">
+        <span class="picker-field-label">Guests</span>
+        <div class="picker-field-value" id="guestToggle">
+          <span id="guestCountDisplay">${currentGuests} guest${currentGuests !== 1 ? 's' : ''}</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="guest-dropdown" id="guestDropdown">
+          <div class="guest-stepper">
+            <span class="guest-stepper-label">Guests</span>
+            <div class="guest-stepper-controls">
+              <button class="guest-stepper-btn" id="guestMinus" ${currentGuests <= 1 ? 'disabled' : ''}>−</button>
+              <span class="guest-stepper-count" id="guestStepperCount">${currentGuests}</span>
+              <button class="guest-stepper-btn" id="guestPlus" ${currentGuests >= 6 ? 'disabled' : ''}>+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  attachPickerListeners();
+  renderProviders(hotel);
+}
+
+const providerWordmarks = {
+  'Chase Travel': `<svg class="provider-wordmark" viewBox="0 0 130 24" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(1,2)">
+      <svg x="0" y="0" width="18" height="18" viewBox="0 0 100 100">
+        <polygon points="30,0 30,30 0,30 0,45 30,45 30,30 45,30 45,0" fill="#0060A9" transform="rotate(0,50,50)"/>
+        <polygon points="30,0 30,30 0,30 0,45 30,45 30,30 45,30 45,0" fill="#0060A9" transform="rotate(90,50,50)"/>
+        <polygon points="30,0 30,30 0,30 0,45 30,45 30,30 45,30 45,0" fill="#0060A9" transform="rotate(180,50,50)"/>
+        <polygon points="30,0 30,30 0,30 0,45 30,45 30,30 45,30 45,0" fill="#0060A9" transform="rotate(270,50,50)"/>
+      </svg>
+      <text x="23" y="15" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="15" font-weight="700" fill="#0060A9" letter-spacing="-0.3">Chase</text>
+      <text x="72" y="15" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#666" letter-spacing="-0.2">Travel</text>
+    </g>
+  </svg>`,
+  'Expedia': `<svg class="provider-wordmark" viewBox="0 0 100 24" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="2" width="20" height="20" rx="5" fill="#FBCC33"/>
+    <path d="M8 14L12 8L12 14" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="24" y="18" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#1B2B5E" letter-spacing="-0.5">expedia</text>
+  </svg>`,
+  'Fora Travel': `<svg class="provider-wordmark" viewBox="0 0 105 24" xmlns="http://www.w3.org/2000/svg">
+    <text x="0" y="18" font-family="Georgia,'Times New Roman',serif" font-size="19" font-weight="700" fill="#1A3C34" letter-spacing="-0.3">fora</text>
+    <text x="40" y="18" font-family="Georgia,'Times New Roman',serif" font-size="19" font-weight="400" fill="#1A3C34" letter-spacing="-0.3">travel</text>
+  </svg>`,
+  'Amex Travel': `<svg class="provider-wordmark" viewBox="0 0 150 24" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="1" width="85" height="22" rx="2" fill="#016FD0"/>
+    <text x="6" y="10.5" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="6" font-weight="700" fill="#fff" letter-spacing="1">AMERICAN</text>
+    <text x="6" y="19" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="8" font-weight="700" fill="#fff" letter-spacing="1.2">EXPRESS</text>
+    <text x="92" y="17" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="14" font-weight="400" fill="#666" letter-spacing="-0.2">Travel</text>
+  </svg>`,
+  'Booking.com': `<svg class="provider-wordmark" viewBox="0 0 125 24" xmlns="http://www.w3.org/2000/svg">
+    <text x="0" y="18" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="17" font-weight="700" fill="#003580" letter-spacing="-0.3">Booking.com</text>
+  </svg>`,
+  'Hotel Direct': `<svg class="provider-wordmark" viewBox="0 0 120 24" xmlns="http://www.w3.org/2000/svg">
+    <text x="0" y="17" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="15" font-weight="600" fill="#1A1A1A" letter-spacing="-0.2">Hotel</text>
+    <text x="48" y="17" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="15" font-weight="400" fill="#888" letter-spacing="-0.2">Direct</text>
+  </svg>`
+};
+
+function renderProviders(hotel) {
+  const baseNights = 4;
+  let providers = hotel.providers.map(p => getAdjustedProvider(p, baseNights));
+  providers.sort((a, b) => a.total - b.total);
+
+  const lowestTotal = Math.min(...providers.map(p => p.total));
+
+  document.getElementById('modalProviders').innerHTML = providers.map(p => {
+    const isBest = p.total === lowestTotal;
+    const wordmark = providerWordmarks[p.name] || `<span style="font-weight:600;font-size:14px">${p.name}</span>`;
+    return `
+      <div class="provider-row${isBest ? ' best-value' : ''}">
+        <div class="provider-top">
+          <div class="provider-identity">
+            ${wordmark}
+            ${isBest ? '<span class="provider-best-badge">Best Price</span>' : ''}
+          </div>
+          <div class="provider-pricing-compact">
+            <div class="provider-nightly">$${p.nightly}<small>/night</small></div>
+            <div class="provider-total">$${p.total.toLocaleString()} total</div>
+          </div>
+        </div>
+        <div class="provider-details">
+          <div class="provider-perks">
+            ${p.loyalty ? `<div class="perk-row perk-loyalty">${icons.loyalty}<span>${p.loyalty}</span></div>` : ''}
+            ${p.cardPerk ? `<div class="perk-row perk-card">${icons.card}<span>${p.cardPerk}</span></div>` : ''}
+            ${p.advisorPerk ? `<div class="perk-row">${icons.advisor}<span>${p.advisorPerk}</span></div>` : ''}
+            <div class="perk-row perk-availability${p.availabilityUrgent ? ' urgent' : ''}">
+              ${p.availabilityUrgent ? icons.availabilityUrgent : icons.availability}<span>${p.availability}</span>
+            </div>
+          </div>
+        </div>
+        <button class="btn-deal">View Deal <span class="arrow">&rarr;</span></button>
+      </div>
+    `;
+  }).join('');
+}
+
+function attachPickerListeners() {
+  const checkIn = document.getElementById('checkInDate');
+  const checkOut = document.getElementById('checkOutDate');
+  const guestToggle = document.getElementById('guestToggle');
+  const guestDropdown = document.getElementById('guestDropdown');
+  const guestMinus = document.getElementById('guestMinus');
+  const guestPlus = document.getElementById('guestPlus');
+
+  if (checkIn) {
+    checkIn.addEventListener('change', function() {
+      currentCheckIn = this.value;
+      if (currentCheckOut <= currentCheckIn) {
+        const nextDay = new Date(currentCheckIn + 'T12:00:00');
+        nextDay.setDate(nextDay.getDate() + 1);
+        currentCheckOut = nextDay.toISOString().split('T')[0];
+      }
+      renderModal();
+    });
+  }
+
+  if (checkOut) {
+    checkOut.addEventListener('change', function() {
+      currentCheckOut = this.value;
+      if (currentCheckIn >= currentCheckOut) {
+        const prevDay = new Date(currentCheckOut + 'T12:00:00');
+        prevDay.setDate(prevDay.getDate() - 1);
+        currentCheckIn = prevDay.toISOString().split('T')[0];
+      }
+      renderModal();
+    });
+  }
+
+  if (guestToggle) {
+    guestToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      guestDropdown.classList.toggle('active');
+    });
+  }
+
+  if (guestMinus) {
+    guestMinus.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (currentGuests > 1) { currentGuests--; updateGuestUI(); refreshProviders(); }
+    });
+  }
+
+  if (guestPlus) {
+    guestPlus.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (currentGuests < 6) { currentGuests++; updateGuestUI(); refreshProviders(); }
+    });
+  }
+
+  document.addEventListener('click', function(e) {
+    const selector = document.getElementById('guestSelector');
+    if (selector && !selector.contains(e.target)) {
+      const dd = document.getElementById('guestDropdown');
+      if (dd) dd.classList.remove('active');
+    }
+  });
+}
+
+function updateGuestUI() {
+  const display = document.getElementById('guestCountDisplay');
+  const count = document.getElementById('guestStepperCount');
+  const minus = document.getElementById('guestMinus');
+  const plus = document.getElementById('guestPlus');
+  if (display) display.textContent = `${currentGuests} guest${currentGuests !== 1 ? 's' : ''}`;
+  if (count) count.textContent = currentGuests;
+  if (minus) minus.disabled = currentGuests <= 1;
+  if (plus) plus.disabled = currentGuests >= 6;
+}
+
+function refreshProviders() {
+  const hotel = hotelsData.find(h => h.id === currentHotelId);
+  if (hotel) renderProviders(hotel);
+}
+
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
+
+renderHotels();
+</script>
+
+</body>
+</html>
