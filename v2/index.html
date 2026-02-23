@@ -1355,7 +1355,7 @@ function renderProviders(hotel) {
             </div>
           </div>
         </div>
-        <button class="btn-deal">View Deal <span class="arrow">&rarr;</span></button>
+        ${p.name === 'Expedia' ? `<a class="btn-deal" href="book.html" style="text-decoration:none">View Deal <span class="arrow">&rarr;</span></a>` : `<button class="btn-deal">View Deal <span class="arrow">&rarr;</span></button>`}
       </div>
     `;
   }).join('');

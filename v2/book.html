@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Book Le Bristol Paris | Condé Nast Traveler</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cnt-gold: #9E6D05;
+  --cnt-gold-hover: #AB7605;
+  --cnt-gold-light: rgba(158, 109, 5, 0.08);
+  --cnt-gold-subtle: rgba(158, 109, 5, 0.04);
+  --cnt-black: #000000;
+  --cnt-dark: #1A1A1A;
+  --cnt-text: #333333;
+  --cnt-text-secondary: #666666;
+  --cnt-text-muted: #979797;
+  --cnt-border: #D6D6D6;
+  --cnt-border-light: #E9E9E9;
+  --cnt-bg: #FFFFFF;
+  --cnt-bg-warm: #FAFAF8;
+  --cnt-bg-green: #F0F7F0;
+  --cnt-red: #B01D20;
+  --cnt-urgent: #C44D3F;
+  --cnt-green: #1C7C2A;
+  --cnt-green-light: #E8F5E9;
+
+  --font-display: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-ui: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html { font-size: 16px; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; }
+body {
+  font-family: var(--font-ui);
+  color: var(--cnt-text);
+  background: #E5E5E5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 32px 0;
+}
+
+/* ===== PHONE FRAME ===== */
+.phone-frame {
+  width: 393px; height: 852px; margin: 0 auto;
+  background: var(--cnt-bg);
+  position: relative;
+  border-radius: 44px;
+  box-shadow: 0 0 0 10px #1A1A1A, 0 0 0 12px #333, 0 20px 60px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+.phone-frame::before {
+  content: ''; position: sticky; top: 0; left: 50%; transform: translateX(-50%);
+  width: 126px; height: 34px; background: #1A1A1A; border-radius: 0 0 20px 20px;
+  z-index: 200; display: block; margin-left: auto; margin-right: auto; pointer-events: none;
+}
+
+@media (max-width: 430px) {
+  body { background: var(--cnt-bg); padding: 0; }
+  .phone-frame { width: 100%; height: 100vh; border-radius: 0; box-shadow: none; }
+  .phone-frame::before { display: none; }
+}
+
+/* ===== SCREENS ===== */
+.screen { display: none; flex-direction: column; height: 100%; overflow: hidden; }
+.screen.active { display: flex; }
+.screen-scroll { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+.screen-scroll::-webkit-scrollbar { width: 0; }
+
+/* ===== TOP BAR ===== */
+.top-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 42px 16px 12px; border-bottom: 1px solid var(--cnt-border-light);
+  background: var(--cnt-bg); flex-shrink: 0; z-index: 10;
+}
+.top-bar-back {
+  display: flex; align-items: center; gap: 4px;
+  font-family: var(--font-ui); font-size: 14px; font-weight: 500;
+  color: var(--cnt-gold); background: none; border: none; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.top-bar-back svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; }
+.top-bar-title {
+  font-family: var(--font-ui); font-size: 11px; font-weight: 600;
+  letter-spacing: 1.2px; text-transform: uppercase; color: var(--cnt-text-muted);
+}
+.top-bar-step {
+  font-family: var(--font-ui); font-size: 11px; color: var(--cnt-text-muted);
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress-bar { height: 3px; background: var(--cnt-border-light); flex-shrink: 0; }
+.progress-bar-fill { height: 100%; background: var(--cnt-gold); transition: width 0.4s ease; }
+
+/* ===== HOTEL SUMMARY STRIP ===== */
+.hotel-strip {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 20px; border-bottom: 1px solid var(--cnt-border-light);
+  background: var(--cnt-bg-warm);
+}
+.hotel-strip-thumb { width: 52px; height: 52px; object-fit: cover; border-radius: 4px; flex-shrink: 0; }
+.hotel-strip-info { min-width: 0; flex: 1; }
+.hotel-strip-name {
+  font-family: var(--font-display); font-size: 14px; font-weight: 700;
+  color: var(--cnt-black); line-height: 1.2; margin-bottom: 2px;
+}
+.hotel-strip-meta {
+  font-family: var(--font-ui); font-size: 11px; color: var(--cnt-text-muted); line-height: 1.4;
+}
+
+/* ===== DATES STRIP ===== */
+.dates-strip {
+  display: flex; padding: 12px 20px; gap: 16px;
+  border-bottom: 1px solid var(--cnt-border-light); background: var(--cnt-bg);
+}
+.dates-strip-item { flex: 1; }
+.dates-strip-label {
+  font-family: var(--font-ui); font-size: 9px; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase; color: var(--cnt-text-muted); margin-bottom: 2px;
+}
+.dates-strip-value {
+  font-family: var(--font-ui); font-size: 13px; font-weight: 500; color: var(--cnt-black);
+}
+
+/* ===== SECTION HEADINGS ===== */
+.section-heading {
+  font-family: var(--font-ui); font-size: 13px; font-weight: 600;
+  letter-spacing: 0.5px; text-transform: uppercase; color: var(--cnt-text-muted);
+  padding: 18px 20px 10px;
+}
+
+/* ===== ROOM CARDS ===== */
+.room-card {
+  margin: 0 20px 16px; border: 1px solid var(--cnt-border-light);
+  background: var(--cnt-bg); overflow: hidden; cursor: pointer;
+  transition: border-color 0.2s;
+}
+.room-card:active { border-color: var(--cnt-gold); }
+.room-card-image { width: 100%; height: 160px; object-fit: cover; display: block; }
+.room-card-body { padding: 14px 16px; }
+.room-card-name {
+  font-family: var(--font-display); font-size: 17px; font-weight: 700;
+  color: var(--cnt-black); margin-bottom: 4px; line-height: 1.25;
+}
+.room-card-details {
+  font-family: var(--font-ui); font-size: 12px; color: var(--cnt-text-secondary);
+  margin-bottom: 10px; line-height: 1.5;
+}
+.room-card-amenities {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px;
+}
+.room-amenity {
+  font-family: var(--font-ui); font-size: 10px; font-weight: 500;
+  color: var(--cnt-text-secondary); background: var(--cnt-bg-warm);
+  padding: 4px 8px; letter-spacing: 0.2px;
+}
+.room-card-footer {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  padding-top: 10px; border-top: 1px solid var(--cnt-border-light);
+}
+.room-price-block {}
+.room-price-label { font-family: var(--font-ui); font-size: 11px; color: var(--cnt-text-muted); }
+.room-price-value { font-family: var(--font-ui); font-size: 22px; font-weight: 700; color: var(--cnt-black); line-height: 1; }
+.room-price-unit { font-family: var(--font-ui); font-size: 11px; color: var(--cnt-text-muted); }
+.room-total { font-family: var(--font-ui); font-size: 11px; color: var(--cnt-text-muted); margin-top: 2px; }
+.room-cancel {
+  font-family: var(--font-ui); font-size: 11px; font-weight: 500;
+  color: var(--cnt-green); display: flex; align-items: center; gap: 4px;
+}
+.room-cancel svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+/* Rate options within a room */
+.rate-options { padding: 0 16px 14px; }
+.rate-option {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 0; border-top: 1px solid var(--cnt-border-light);
+  cursor: pointer;
+}
+.rate-radio {
+  width: 18px; height: 18px; border: 2px solid var(--cnt-border);
+  border-radius: 50%; flex-shrink: 0; margin-top: 1px;
+  display: flex; align-items: center; justify-content: center;
+}
+.rate-radio.selected { border-color: var(--cnt-gold); }
+.rate-radio.selected::after {
+  content: ''; width: 10px; height: 10px; background: var(--cnt-gold); border-radius: 50%;
+}
+.rate-option-info { flex: 1; min-width: 0; }
+.rate-option-name { font-family: var(--font-ui); font-size: 13px; font-weight: 600; color: var(--cnt-black); margin-bottom: 2px; }
+.rate-option-desc { font-family: var(--font-ui); font-size: 11px; color: var(--cnt-text-secondary); line-height: 1.4; }
+.rate-option-price { font-family: var(--font-ui); font-size: 14px; font-weight: 600; color: var(--cnt-black); flex-shrink: 0; }
+
+/* ===== SELECT ROOM CTA ===== */
+.btn-select-room {
+  display: block; width: calc(100% - 40px); margin: 0 20px 20px;
+  padding: 14px 20px; background: var(--cnt-gold); color: #fff;
+  font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.8px; text-transform: uppercase;
+  border: none; cursor: pointer; text-align: center;
+  -webkit-tap-highlight-color: transparent; transition: background 0.2s;
+}
+.btn-select-room:active { background: var(--cnt-gold-hover); }
+
+/* ===== STICKY FOOTER ===== */
+.sticky-footer {
+  padding: 14px 20px 28px; border-top: 1px solid var(--cnt-border-light);
+  background: var(--cnt-bg); flex-shrink: 0;
+}
+.sticky-footer-row {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;
+}
+.sticky-footer-price { font-family: var(--font-ui); font-size: 18px; font-weight: 700; color: var(--cnt-black); }
+.sticky-footer-price small { font-size: 12px; font-weight: 400; color: var(--cnt-text-muted); }
+.sticky-footer-total { font-family: var(--font-ui); font-size: 11px; color: var(--cnt-text-muted); }
+.btn-continue {
+  display: block; width: 100%; padding: 15px 20px;
+  background: var(--cnt-gold); color: #fff;
+  font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.8px; text-transform: uppercase;
+  border: none; cursor: pointer; text-align: center;
+  -webkit-tap-highlight-color: transparent; transition: background 0.2s;
+}
+.btn-continue:active { background: var(--cnt-gold-hover); }
+
+/* ===== FORM STYLES (Guest Details & Payment) ===== */
+.form-section { padding: 0 20px; }
+.form-group { margin-bottom: 16px; }
+.form-label {
+  font-family: var(--font-ui); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.5px; text-transform: uppercase; color: var(--cnt-text-muted);
+  margin-bottom: 6px; display: block;
+}
+.form-input {
+  width: 100%; padding: 12px 14px;
+  font-family: var(--font-ui); font-size: 14px; color: var(--cnt-black);
+  border: 1px solid var(--cnt-border); background: var(--cnt-bg);
+  outline: none; transition: border-color 0.2s;
+}
+.form-input:focus { border-color: var(--cnt-gold); }
+.form-input::placeholder { color: var(--cnt-text-muted); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form-hint {
+  font-family: var(--font-ui); font-size: 11px; color: var(--cnt-text-muted);
+  margin-top: 4px; line-height: 1.4;
+}
+
+/* Checkbox */
+.form-checkbox {
+  display: flex; align-items: flex-start; gap: 10px; margin-bottom: 16px; cursor: pointer;
+}
+.form-checkbox-box {
+  width: 18px; height: 18px; border: 1.5px solid var(--cnt-border);
+  flex-shrink: 0; margin-top: 1px; display: flex; align-items: center; justify-content: center;
+}
+.form-checkbox-box.checked { background: var(--cnt-gold); border-color: var(--cnt-gold); }
+.form-checkbox-box.checked::after { content: '✓'; color: #fff; font-size: 12px; font-weight: 700; }
+.form-checkbox-label {
+  font-family: var(--font-ui); font-size: 12px; color: var(--cnt-text-secondary); line-height: 1.4;
+}
+
+/* ===== INFO CARDS ===== */
+.info-card {
+  margin: 0 20px 16px; padding: 14px 16px;
+  background: var(--cnt-bg-warm); border: 1px solid var(--cnt-border-light);
+}
+.info-card-title {
+  font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  color: var(--cnt-black); margin-bottom: 6px;
+}
+.info-card-text {
+  font-family: var(--font-ui); font-size: 12px; color: var(--cnt-text-secondary); line-height: 1.5;
+}
+.info-card.green { background: var(--cnt-green-light); border-color: #C8E6C9; }
+.info-card.green .info-card-title { color: var(--cnt-green); }
+
+/* ===== PAYMENT CARD ===== */
+.card-input-row { display: grid; grid-template-columns: 1fr 80px 80px; gap: 12px; }
+.payment-icons {
+  display: flex; gap: 6px; margin-bottom: 12px;
+}
+.payment-icon {
+  width: 36px; height: 24px; border: 1px solid var(--cnt-border-light);
+  border-radius: 3px; display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-ui); font-size: 8px; font-weight: 700; color: var(--cnt-text-muted);
+}
+
+/* ===== PRICE BREAKDOWN ===== */
+.price-breakdown { padding: 0 20px 16px; }
+.price-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 6px 0; font-family: var(--font-ui); font-size: 13px;
+}
+.price-row-label { color: var(--cnt-text-secondary); }
+.price-row-value { font-weight: 500; color: var(--cnt-black); }
+.price-row.total {
+  padding-top: 10px; margin-top: 6px; border-top: 1px solid var(--cnt-border);
+  font-weight: 700; font-size: 15px;
+}
+.price-row.total .price-row-label { color: var(--cnt-black); }
+
+/* ===== CONFIRMATION ===== */
+.confirm-hero { text-align: center; padding: 32px 20px 24px; }
+.confirm-check {
+  width: 56px; height: 56px; border-radius: 50%; background: var(--cnt-green-light);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+}
+.confirm-check svg { width: 28px; height: 28px; stroke: var(--cnt-green); fill: none; stroke-width: 2.5; }
+.confirm-title {
+  font-family: var(--font-display); font-size: 22px; font-weight: 700;
+  color: var(--cnt-black); margin-bottom: 6px;
+}
+.confirm-subtitle {
+  font-family: var(--font-ui); font-size: 13px; color: var(--cnt-text-secondary); line-height: 1.5;
+}
+.confirm-ref {
+  font-family: var(--font-ui); font-size: 12px; color: var(--cnt-text-muted);
+  margin-top: 8px;
+}
+.confirm-ref strong { color: var(--cnt-black); font-weight: 600; }
+
+.confirm-detail-card {
+  margin: 0 20px 16px; border: 1px solid var(--cnt-border-light); overflow: hidden;
+}
+.confirm-detail-header {
+  padding: 12px 16px; background: var(--cnt-bg-warm);
+  font-family: var(--font-ui); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.8px; text-transform: uppercase; color: var(--cnt-text-muted);
+}
+.confirm-detail-body { padding: 14px 16px; }
+.confirm-detail-row {
+  display: flex; justify-content: space-between; padding: 4px 0;
+  font-family: var(--font-ui); font-size: 13px;
+}
+.confirm-detail-row dt { color: var(--cnt-text-secondary); }
+.confirm-detail-row dd { font-weight: 500; color: var(--cnt-black); text-align: right; }
+
+.confirm-hotel-row {
+  display: flex; gap: 12px; align-items: center; padding: 14px 16px;
+}
+.confirm-hotel-thumb { width: 64px; height: 64px; object-fit: cover; border-radius: 4px; }
+.confirm-hotel-info {}
+.confirm-hotel-name {
+  font-family: var(--font-display); font-size: 15px; font-weight: 700;
+  color: var(--cnt-black); margin-bottom: 2px;
+}
+.confirm-hotel-loc {
+  font-family: var(--font-ui); font-size: 11px; color: var(--cnt-text-muted);
+}
+
+.btn-done {
+  display: block; width: calc(100% - 40px); margin: 8px 20px 16px;
+  padding: 14px 20px; background: var(--cnt-gold); color: #fff;
+  font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.8px; text-transform: uppercase;
+  border: none; cursor: pointer; text-align: center;
+  text-decoration: none;
+}
+.btn-outline {
+  display: block; width: calc(100% - 40px); margin: 0 20px 20px;
+  padding: 14px 20px; background: transparent;
+  color: var(--cnt-gold); border: 1.5px solid var(--cnt-gold);
+  font-family: var(--font-ui); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.8px; text-transform: uppercase;
+  cursor: pointer; text-align: center; text-decoration: none;
+}
+
+/* ===== POWERED BY ===== */
+.powered-by {
+  text-align: center; padding: 12px 20px;
+  font-family: var(--font-ui); font-size: 10px; color: var(--cnt-text-muted);
+}
+.powered-by span { font-weight: 600; }
+
+/* ===== DIVIDER ===== */
+.section-divider { height: 8px; background: var(--cnt-bg-warm); }
+
+/* ===== TRUST FOOTER ===== */
+.trust-footer {
+  padding: 16px 20px; text-align: center;
+  font-family: var(--font-ui); font-size: 10px; color: var(--cnt-text-muted); line-height: 1.6;
+}
+.trust-footer a { color: var(--cnt-gold); text-decoration: none; }
+.trust-icons { display: flex; justify-content: center; gap: 16px; margin-bottom: 8px; }
+.trust-icon {
+  font-family: var(--font-ui); font-size: 9px; font-weight: 600;
+  color: var(--cnt-text-muted); display: flex; align-items: center; gap: 4px;
+}
+.trust-icon svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+@media (hover: hover) {
+  .btn-continue:hover, .btn-select-room:hover, .btn-done:hover { background: var(--cnt-gold-hover); }
+  .btn-outline:hover { background: var(--cnt-gold); color: #fff; }
+  .room-card:hover { border-color: var(--cnt-gold); }
+}
+</style>
+</head>
+<body>
+
+<div class="phone-frame">
+
+  <!-- ==================== SCREEN 1: ROOM SELECTION ==================== -->
+  <div class="screen active" id="screenRooms">
+    <div class="top-bar">
+      <button class="top-bar-back" onclick="window.location.href='index.html'">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg> Back
+      </button>
+      <span class="top-bar-title">Choose Your Room</span>
+      <span class="top-bar-step">1 of 3</span>
+    </div>
+    <div class="progress-bar"><div class="progress-bar-fill" style="width:33%"></div></div>
+
+    <div class="screen-scroll">
+      <div class="hotel-strip">
+        <img class="hotel-strip-thumb" src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=200&h=200&fit=crop" alt="">
+        <div class="hotel-strip-info">
+          <div class="hotel-strip-name">Le Bristol Paris</div>
+          <div class="hotel-strip-meta">112 Rue du Faubourg Saint-Honoré, 8th Arr.</div>
+        </div>
+      </div>
+
+      <div class="dates-strip">
+        <div class="dates-strip-item">
+          <div class="dates-strip-label">Check in</div>
+          <div class="dates-strip-value">Sat, May 10</div>
+        </div>
+        <div class="dates-strip-item">
+          <div class="dates-strip-label">Check out</div>
+          <div class="dates-strip-value">Wed, May 14</div>
+        </div>
+        <div class="dates-strip-item">
+          <div class="dates-strip-label">Guests</div>
+          <div class="dates-strip-value">2 guests</div>
+        </div>
+      </div>
+
+      <div class="section-heading">Select a room</div>
+
+      <!-- Room 1 -->
+      <div class="room-card" onclick="selectRoom(0)">
+        <img class="room-card-image" src="https://images.unsplash.com/photo-1590490360182-c33d955e4c47?w=800&h=400&fit=crop" alt="Superior Room">
+        <div class="room-card-body">
+          <div class="room-card-name">Superior Room</div>
+          <div class="room-card-details">King bed · 35 m² · City view · Sleeps 2</div>
+          <div class="room-card-amenities">
+            <span class="room-amenity">Free Wi-Fi</span>
+            <span class="room-amenity">Air conditioning</span>
+            <span class="room-amenity">Minibar</span>
+            <span class="room-amenity">Safe</span>
+          </div>
+          <div class="room-card-footer">
+            <div class="room-price-block">
+              <div class="room-price-label">From</div>
+              <div class="room-price-value">$485 <span class="room-price-unit">/night</span></div>
+              <div class="room-total">$1,940 total incl. taxes</div>
+            </div>
+            <div class="room-cancel">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Free cancellation
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room 2 -->
+      <div class="room-card" onclick="selectRoom(1)">
+        <img class="room-card-image" src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&h=400&fit=crop" alt="Deluxe Room">
+        <div class="room-card-body">
+          <div class="room-card-name">Deluxe Room</div>
+          <div class="room-card-details">King bed · 45 m² · Garden view · Sleeps 2</div>
+          <div class="room-card-amenities">
+            <span class="room-amenity">Free Wi-Fi</span>
+            <span class="room-amenity">Air conditioning</span>
+            <span class="room-amenity">Minibar</span>
+            <span class="room-amenity">Nespresso machine</span>
+            <span class="room-amenity">Bathrobe & slippers</span>
+          </div>
+          <div class="room-card-footer">
+            <div class="room-price-block">
+              <div class="room-price-label">From</div>
+              <div class="room-price-value">$625 <span class="room-price-unit">/night</span></div>
+              <div class="room-total">$2,500 total incl. taxes</div>
+            </div>
+            <div class="room-cancel">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Free cancellation
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room 3 -->
+      <div class="room-card" onclick="selectRoom(2)">
+        <img class="room-card-image" src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=400&fit=crop" alt="Junior Suite">
+        <div class="room-card-body">
+          <div class="room-card-name">Junior Suite</div>
+          <div class="room-card-details">King bed · 55 m² · Garden view · Sleeps 2 · Separate living area</div>
+          <div class="room-card-amenities">
+            <span class="room-amenity">Free Wi-Fi</span>
+            <span class="room-amenity">Air conditioning</span>
+            <span class="room-amenity">Full minibar</span>
+            <span class="room-amenity">Nespresso machine</span>
+            <span class="room-amenity">Bathrobe & slippers</span>
+            <span class="room-amenity">Turndown service</span>
+          </div>
+          <div class="room-card-footer">
+            <div class="room-price-block">
+              <div class="room-price-label">From</div>
+              <div class="room-price-value">$890 <span class="room-price-unit">/night</span></div>
+              <div class="room-total">$3,560 total incl. taxes</div>
+            </div>
+            <div class="room-cancel">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              Free cancellation
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="powered-by">Prices & availability powered by <span>Expedia</span></div>
+
+      <div class="trust-footer">
+        <div class="trust-icons">
+          <span class="trust-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Secure booking</span>
+          <span class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Price guarantee</span>
+        </div>
+        Hotels on this page are independently selected by our editors.
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SCREEN 2: GUEST DETAILS ==================== -->
+  <div class="screen" id="screenGuest">
+    <div class="top-bar">
+      <button class="top-bar-back" onclick="showScreen('screenRooms')">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg> Rooms
+      </button>
+      <span class="top-bar-title">Guest Details</span>
+      <span class="top-bar-step">2 of 3</span>
+    </div>
+    <div class="progress-bar"><div class="progress-bar-fill" style="width:66%"></div></div>
+
+    <div class="screen-scroll">
+      <div class="hotel-strip">
+        <img class="hotel-strip-thumb" src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=200&h=200&fit=crop" alt="">
+        <div class="hotel-strip-info">
+          <div class="hotel-strip-name">Le Bristol Paris</div>
+          <div class="hotel-strip-meta" id="guestRoomSummary">Superior Room · 4 nights · 2 guests</div>
+        </div>
+      </div>
+
+      <div class="section-heading">Who's checking in?</div>
+
+      <div class="form-section">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First name</label>
+            <input class="form-input" type="text" placeholder="First name" value="Callum">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last name</label>
+            <input class="form-input" type="text" placeholder="Last name" value="Kilby">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email address</label>
+          <input class="form-input" type="email" placeholder="email@example.com" value="callum@example.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone number</label>
+          <input class="form-input" type="tel" placeholder="+44 7700 000000">
+        </div>
+        <div class="form-hint">Name must match the government-issued ID used at check-in.</div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="section-heading">Special requests</div>
+      <div class="form-section">
+        <div class="form-group">
+          <textarea class="form-input" rows="3" placeholder="E.g. late check-in, extra pillows, adjoining rooms..."></textarea>
+          <div class="form-hint">Requests are not guaranteed but will be passed to the hotel.</div>
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="info-card green">
+        <div class="info-card-title">Free cancellation until May 8, 2026</div>
+        <div class="info-card-text">Cancel before 11:59 PM (local hotel time) on May 8 for a full refund. After that, the first night is non-refundable.</div>
+      </div>
+
+      <div class="section-heading">Price summary</div>
+      <div class="price-breakdown" id="guestPriceBreakdown">
+        <!-- filled by JS -->
+      </div>
+
+      <div class="powered-by">Booking powered by <span>Expedia</span> · <a href="#" style="color:var(--cnt-gold)">Terms apply</a></div>
+    </div>
+
+    <div class="sticky-footer">
+      <div class="sticky-footer-row">
+        <div>
+          <div class="sticky-footer-price" id="guestFooterPrice">$1,940</div>
+          <div class="sticky-footer-total">Total incl. taxes & fees</div>
+        </div>
+      </div>
+      <button class="btn-continue" onclick="showScreen('screenPayment')">Continue to Payment</button>
+    </div>
+  </div>
+
+  <!-- ==================== SCREEN 3: PAYMENT ==================== -->
+  <div class="screen" id="screenPayment">
+    <div class="top-bar">
+      <button class="top-bar-back" onclick="showScreen('screenGuest')">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg> Details
+      </button>
+      <span class="top-bar-title">Payment</span>
+      <span class="top-bar-step">3 of 3</span>
+    </div>
+    <div class="progress-bar"><div class="progress-bar-fill" style="width:100%"></div></div>
+
+    <div class="screen-scroll">
+      <div class="hotel-strip">
+        <img class="hotel-strip-thumb" src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=200&h=200&fit=crop" alt="">
+        <div class="hotel-strip-info">
+          <div class="hotel-strip-name">Le Bristol Paris</div>
+          <div class="hotel-strip-meta" id="paymentRoomSummary">Superior Room · 4 nights · 2 guests</div>
+        </div>
+      </div>
+
+      <div class="section-heading">Payment method</div>
+
+      <div class="form-section">
+        <div class="payment-icons">
+          <div class="payment-icon" style="color:#1A1F71;font-size:10px;font-weight:800;">VISA</div>
+          <div class="payment-icon" style="color:#EB001B;">
+            <svg width="20" height="14" viewBox="0 0 20 14"><circle cx="7" cy="7" r="7" fill="#EB001B"/><circle cx="13" cy="7" r="7" fill="#F79E1B"/><path d="M10 1.3a7 7 0 0 1 0 11.4A7 7 0 0 1 10 1.3z" fill="#FF5F00"/></svg>
+          </div>
+          <div class="payment-icon" style="color:#006FCF;font-size:7px;font-weight:800;">AMEX</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Card number</label>
+          <input class="form-input" type="text" placeholder="1234 5678 9012 3456">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Expiry</label>
+            <input class="form-input" type="text" placeholder="MM / YY">
+          </div>
+          <div class="form-group">
+            <label class="form-label">CVV</label>
+            <input class="form-input" type="text" placeholder="123">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Name on card</label>
+          <input class="form-input" type="text" placeholder="Name as shown on card" value="Callum Kilby">
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="section-heading">Billing address</div>
+      <div class="form-section">
+        <div class="form-group">
+          <label class="form-label">Country</label>
+          <input class="form-input" type="text" value="United Kingdom">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Postcode</label>
+          <input class="form-input" type="text" placeholder="SW1A 1AA">
+        </div>
+      </div>
+
+      <div class="section-divider"></div>
+
+      <div class="section-heading">Price breakdown</div>
+      <div class="price-breakdown" id="paymentPriceBreakdown">
+        <!-- filled by JS -->
+      </div>
+
+      <div class="info-card green">
+        <div class="info-card-title">Free cancellation until May 8, 2026</div>
+        <div class="info-card-text">You won't be charged until the cancellation window closes.</div>
+      </div>
+
+      <div class="form-section" style="margin-bottom:16px;">
+        <div class="form-checkbox" onclick="this.querySelector('.form-checkbox-box').classList.toggle('checked')">
+          <div class="form-checkbox-box checked"></div>
+          <span class="form-checkbox-label">I agree to the <a href="#" style="color:var(--cnt-gold)">booking terms</a>, <a href="#" style="color:var(--cnt-gold)">cancellation policy</a>, and <a href="#" style="color:var(--cnt-gold)">privacy policy</a>.</span>
+        </div>
+      </div>
+
+      <div class="powered-by">Payment processed securely by <span>Expedia</span></div>
+    </div>
+
+    <div class="sticky-footer">
+      <button class="btn-continue" onclick="showScreen('screenConfirm')">Complete Booking</button>
+    </div>
+  </div>
+
+  <!-- ==================== SCREEN 4: CONFIRMATION ==================== -->
+  <div class="screen" id="screenConfirm">
+    <div class="top-bar">
+      <span></span>
+      <span class="top-bar-title">Booking Confirmed</span>
+      <span></span>
+    </div>
+
+    <div class="screen-scroll">
+      <div class="confirm-hero">
+        <div class="confirm-check">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="confirm-title">You're all set!</div>
+        <div class="confirm-subtitle">Your reservation at Le Bristol Paris has been confirmed. A confirmation email has been sent to callum@example.com</div>
+        <div class="confirm-ref">Confirmation # <strong>CNT-2026-BRS-48291</strong></div>
+      </div>
+
+      <div class="confirm-detail-card">
+        <div class="confirm-detail-header">Your stay</div>
+        <div class="confirm-hotel-row">
+          <img class="confirm-hotel-thumb" src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=200&h=200&fit=crop" alt="">
+          <div class="confirm-hotel-info">
+            <div class="confirm-hotel-name">Le Bristol Paris</div>
+            <div class="confirm-hotel-loc">112 Rue du Faubourg Saint-Honoré, Paris</div>
+          </div>
+        </div>
+        <div class="confirm-detail-body" id="confirmDetails">
+          <!-- filled by JS -->
+        </div>
+      </div>
+
+      <div class="confirm-detail-card">
+        <div class="confirm-detail-header">Payment</div>
+        <div class="confirm-detail-body" id="confirmPayment">
+          <!-- filled by JS -->
+        </div>
+      </div>
+
+      <div class="info-card green">
+        <div class="info-card-title">Free cancellation until May 8, 2026</div>
+        <div class="info-card-text">You can cancel for free in your Condé Nast Traveler account or via the confirmation email.</div>
+      </div>
+
+      <a class="btn-done" href="index.html">Back to Hotels</a>
+      <button class="btn-outline" style="margin-bottom:24px;">View in My Trips</button>
+
+      <div class="powered-by">Booked via <span>Condé Nast Traveler</span> · Fulfilled by <span>Expedia</span></div>
+
+      <div class="trust-footer">
+        Need help? Contact <a href="#">CNT Travel Support</a><br>
+        Available 24/7 for booking assistance.
+      </div>
+    </div>
+  </div>
+
+</div><!-- .phone-frame -->
+
+<script>
+const rooms = [
+  { name: 'Superior Room', nightly: 485, total: 1940, taxes: 194, size: '35 m²', bed: 'King bed', view: 'City view' },
+  { name: 'Deluxe Room', nightly: 625, total: 2500, taxes: 250, size: '45 m²', bed: 'King bed', view: 'Garden view' },
+  { name: 'Junior Suite', nightly: 890, total: 3560, taxes: 356, size: '55 m²', bed: 'King bed', view: 'Garden view' },
+];
+
+let selectedRoom = 0;
+
+function selectRoom(idx) {
+  selectedRoom = idx;
+  const room = rooms[idx];
+  document.getElementById('guestRoomSummary').textContent = `${room.name} · 4 nights · 2 guests`;
+  document.getElementById('paymentRoomSummary').textContent = `${room.name} · 4 nights · 2 guests`;
+
+  const breakdown = `
+    <div class="price-row"><span class="price-row-label">${room.name} × 4 nights</span><span class="price-row-value">$${(room.total - room.taxes).toLocaleString()}</span></div>
+    <div class="price-row"><span class="price-row-label">Taxes & fees</span><span class="price-row-value">$${room.taxes}</span></div>
+    <div class="price-row total"><span class="price-row-label">Total</span><span class="price-row-value">$${room.total.toLocaleString()}</span></div>
+  `;
+  document.getElementById('guestPriceBreakdown').innerHTML = breakdown;
+  document.getElementById('paymentPriceBreakdown').innerHTML = breakdown;
+  document.getElementById('guestFooterPrice').innerHTML = `$${room.total.toLocaleString()}`;
+
+  document.getElementById('confirmDetails').innerHTML = `
+    <div class="confirm-detail-row"><dt>Room</dt><dd>${room.name}</dd></div>
+    <div class="confirm-detail-row"><dt>Check-in</dt><dd>Sat, May 10, 2026</dd></div>
+    <div class="confirm-detail-row"><dt>Check-out</dt><dd>Wed, May 14, 2026</dd></div>
+    <div class="confirm-detail-row"><dt>Duration</dt><dd>4 nights</dd></div>
+    <div class="confirm-detail-row"><dt>Guests</dt><dd>2 adults</dd></div>
+  `;
+  document.getElementById('confirmPayment').innerHTML = `
+    <div class="confirm-detail-row"><dt>${room.name} × 4 nights</dt><dd>$${(room.total - room.taxes).toLocaleString()}</dd></div>
+    <div class="confirm-detail-row"><dt>Taxes & fees</dt><dd>$${room.taxes}</dd></div>
+    <div class="confirm-detail-row" style="padding-top:8px;margin-top:4px;border-top:1px solid var(--cnt-border-light);font-weight:700;"><dt>Total charged</dt><dd>$${room.total.toLocaleString()}</dd></div>
+    <div class="confirm-detail-row"><dt>Paid with</dt><dd>Visa ····3456</dd></div>
+  `;
+
+  showScreen('screenGuest');
+}
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const scrollEl = document.getElementById(id).querySelector('.screen-scroll');
+  if (scrollEl) scrollEl.scrollTop = 0;
+}
+
+selectRoom(0);
+showScreen('screenRooms');
+</script>
+
+</body>
+</html>
