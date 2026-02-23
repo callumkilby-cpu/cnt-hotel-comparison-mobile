@@ -199,7 +199,7 @@ body {
 
 /* ===== SELECT ROOM CTA ===== */
 .btn-select-room {
-  display: block; width: calc(100% - 40px); margin: 0 20px 20px;
+  display: block; width: 100%; margin-top: 14px;
   padding: 14px 20px; background: var(--cnt-gold); color: #fff;
   font-family: var(--font-ui); font-size: 12px; font-weight: 600;
   letter-spacing: 0.8px; text-transform: uppercase;
@@ -444,8 +444,8 @@ body {
       <div class="section-heading">Select a room</div>
 
       <!-- Room 1 -->
-      <div class="room-card" onclick="selectRoom(0)">
-        <img class="room-card-image" src="https://images.unsplash.com/photo-1590490360182-c33d955e4c47?w=800&h=400&fit=crop" alt="Superior Room">
+      <div class="room-card">
+        <img class="room-card-image" src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&h=400&fit=crop" alt="Superior Room">
         <div class="room-card-body">
           <div class="room-card-name">Superior Room</div>
           <div class="room-card-details">King bed · 35 m² · City view · Sleeps 2</div>
@@ -466,11 +466,12 @@ body {
               Free cancellation
             </div>
           </div>
+          <button class="btn-select-room" onclick="selectRoom(0)">Reserve</button>
         </div>
       </div>
 
       <!-- Room 2 -->
-      <div class="room-card" onclick="selectRoom(1)">
+      <div class="room-card">
         <img class="room-card-image" src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&h=400&fit=crop" alt="Deluxe Room">
         <div class="room-card-body">
           <div class="room-card-name">Deluxe Room</div>
@@ -493,11 +494,12 @@ body {
               Free cancellation
             </div>
           </div>
+          <button class="btn-select-room" onclick="selectRoom(1)">Reserve</button>
         </div>
       </div>
 
       <!-- Room 3 -->
-      <div class="room-card" onclick="selectRoom(2)">
+      <div class="room-card">
         <img class="room-card-image" src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=400&fit=crop" alt="Junior Suite">
         <div class="room-card-body">
           <div class="room-card-name">Junior Suite</div>
@@ -521,6 +523,7 @@ body {
               Free cancellation
             </div>
           </div>
+          <button class="btn-select-room" onclick="selectRoom(2)">Reserve</button>
         </div>
       </div>
 
