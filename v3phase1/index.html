@@ -625,8 +625,35 @@ body {
   font-size: 13.5px;
 }
 .perk-card { color: #6B5B8A; }
+.perk-cnt {
+  color: var(--cnt-red);
+  font-weight: 600;
+  font-size: 13.5px;
+}
 .perk-availability { color: var(--cnt-text-muted); }
 .perk-availability.urgent { color: var(--cnt-urgent); font-weight: 600; }
+
+.provider-cnt-badge {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--cnt-bg);
+  background: var(--cnt-red);
+  padding: 2px 7px;
+  display: inline-block;
+  margin-left: 8px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.provider-row.cnt-exclusive {
+  background: rgba(176, 29, 32, 0.04);
+  margin: 0 -20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 .btn-deal {
   font-family: var(--font-ui);
@@ -976,7 +1003,8 @@ const icons = {
   advisor: '<span class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#9E6D05" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>',
   availability: '<span class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#979797" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>',
   availabilityUrgent: '<span class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C44D3F" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>',
-  calendar: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>'
+  calendar: '<svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
+  cnt: '<span class="perk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#B01D20" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></span>'
 };
 
 function renderHotels() {
@@ -1092,21 +1120,39 @@ function renderProviders(hotel) {
 
   const preferred = providers.reduce((best, p) => (p.loyaltyValue > (best ? best.loyaltyValue : 0)) ? p : best, null);
 
+  providers.sort((a, b) => {
+    const aIsPreferred = preferred && a.name === preferred.name;
+    const bIsPreferred = preferred && b.name === preferred.name;
+    const aIsExpedia = a.name === 'Expedia';
+    const bIsExpedia = b.name === 'Expedia';
+    if (aIsPreferred) return -1;
+    if (bIsPreferred) return 1;
+    if (aIsExpedia) return -1;
+    if (bIsExpedia) return 1;
+    return 0;
+  });
+
   document.getElementById('modalProviders').innerHTML = providers.map(p => {
     const isPreferred = preferred && p.name === preferred.name;
+    const isCntExclusive = p.name === 'Expedia';
     const wordmark = providerWordmarks[p.name] || `<span style="font-weight:600;font-size:14px">${p.name}</span>`;
-    const hasPerks = p.loyalty || p.cardPerk || p.advisorPerk;
+    const hasPerks = p.loyalty || p.cardPerk || p.advisorPerk || isCntExclusive;
+    let rowClass = 'provider-row';
+    if (isPreferred) rowClass += ' best-value';
+    if (isCntExclusive) rowClass += ' cnt-exclusive';
     return `
-      <div class="provider-row${isPreferred ? ' best-value' : ''}">
+      <div class="${rowClass}">
         <div class="provider-top">
           <div class="provider-identity">
             ${wordmark}
             ${isPreferred ? '<span class="provider-best-badge">Your preferred partner</span>' : ''}
+            ${isCntExclusive ? '<span class="provider-cnt-badge">CNT exclusive offer</span>' : ''}
           </div>
         </div>
         ${hasPerks ? `
         <div class="provider-details">
           <div class="provider-perks">
+            ${isCntExclusive ? `<div class="perk-row perk-cnt">${icons.cnt}<span>5% off when you book using your Traveller account</span></div>` : ''}
             ${p.loyalty ? `<div class="perk-row perk-loyalty">${icons.loyalty}<span>${p.loyalty}</span></div>` : ''}
             ${p.cardPerk ? `<div class="perk-row perk-card">${icons.card}<span>${p.cardPerk}</span></div>` : ''}
             ${p.advisorPerk ? `<div class="perk-row">${icons.advisor}<span>${p.advisorPerk}</span></div>` : ''}
