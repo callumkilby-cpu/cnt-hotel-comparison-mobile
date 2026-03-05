@@ -1,0 +1,3330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Places to Stay | Condé Nast Traveler</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cnt-gold: #9E6D05;
+  --cnt-gold-light: rgba(158, 109, 5, 0.08);
+  --cnt-gold-hover: #B57E06;
+  --cnt-black: #000000;
+  --cnt-dark: #1A1A1A;
+  --cnt-text: #333333;
+  --cnt-text-secondary: #666666;
+  --cnt-text-muted: #979797;
+  --cnt-border: #D4D4D4;
+  --cnt-border-light: #E9E9E9;
+  --cnt-bg: #FFFFFF;
+  --cnt-bg-warm: #FAFAF7;
+  --font-display: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-ui: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-ui);
+  color: var(--cnt-text);
+  background: #E5E5E5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 32px 0;
+}
+
+.phone-frame {
+  width: 393px;
+  height: 852px;
+  margin: 0 auto;
+  background: var(--cnt-bg);
+  position: relative;
+  border-radius: 44px;
+  box-shadow:
+    0 0 0 10px #1A1A1A,
+    0 0 0 12px #333,
+    0 20px 60px rgba(0,0,0,0.3);
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-frame::-webkit-scrollbar { width: 0; }
+
+.phone-frame::before {
+  content: '';
+  position: sticky;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 126px;
+  height: 34px;
+  background: #1A1A1A;
+  border-radius: 0 0 20px 20px;
+  z-index: 200;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+@media (max-width: 430px) {
+  body { background: var(--cnt-bg); padding: 0; }
+  .phone-frame {
+    width: 100%; height: 100vh;
+    border-radius: 0; box-shadow: none;
+  }
+  .phone-frame::before { display: none; }
+}
+
+.page-content {
+  flex: 1;
+  padding-bottom: 40px;
+}
+
+/* ===== TOP BAR ===== */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px 10px 18px;
+  background: var(--cnt-bg);
+  z-index: 100;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--cnt-border-light);
+}
+
+.top-bar-logo {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.top-bar-logo img {
+  height: 22px;
+  width: auto;
+  display: block;
+}
+
+.top-bar-logo .logo-super {
+  font-family: var(--font-display);
+  font-size: 7.5px;
+  font-weight: 400;
+  color: var(--cnt-black);
+  letter-spacing: 0.2px;
+  padding-left: 1px;
+}
+
+.top-bar-logo .logo-main {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--cnt-black);
+  letter-spacing: -0.3px;
+  line-height: 0.9;
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.top-bar-btn {
+  width: 34px; height: 34px;
+  background: none; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--cnt-black);
+}
+
+.top-bar-btn svg {
+  width: 20px; height: 20px;
+  stroke: currentColor; fill: none; stroke-width: 1.5;
+}
+
+.menu-label {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--cnt-black);
+  margin-right: 2px;
+}
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+  padding: 20px 24px 20px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--cnt-black);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.page-header p {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--cnt-text-secondary);
+}
+
+/* ===== SEARCH COMPONENT ===== */
+.search-panel {
+  margin: 0 16px 28px;
+  background: var(--cnt-bg);
+  border: 1px solid var(--cnt-border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.search-field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--cnt-border-light);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.search-field:active {
+  background: var(--cnt-bg-warm);
+}
+
+.search-field .field-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--cnt-text-muted);
+}
+
+.search-field .field-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+
+.field-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.field-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--cnt-text-muted);
+  margin-bottom: 2px;
+}
+
+.field-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--cnt-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.field-value.placeholder {
+  color: var(--cnt-text-muted);
+}
+
+.search-row {
+  display: flex;
+}
+
+.search-row .search-field {
+  flex: 1;
+  border-bottom: none;
+}
+
+.search-row .search-field:first-child {
+  border-right: 1px solid var(--cnt-border-light);
+}
+
+.search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: calc(100% - 24px);
+  margin: 0 12px 12px;
+  padding: 14px;
+  background: var(--cnt-black);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-btn:active {
+  background: var(--cnt-gold);
+}
+
+.search-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2.5;
+}
+
+@media (hover: hover) {
+  .search-btn:hover { background: var(--cnt-gold); }
+  .search-field:hover { background: var(--cnt-bg-warm); }
+}
+
+/* ===== DATE PICKER MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 500;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s, visibility 0.25s;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  width: 393px;
+  max-height: 70vh;
+  background: var(--cnt-bg);
+  border-radius: 20px 20px 0 0;
+  z-index: 501;
+  transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+  overflow-y: auto;
+  padding: 20px 20px 36px;
+}
+
+@media (max-width: 430px) {
+  .modal-sheet { width: 100%; }
+}
+
+.modal-overlay.open + .modal-sheet,
+.modal-sheet.open {
+  transform: translateX(-50%) translateY(0);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.modal-header h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cnt-black);
+}
+
+.modal-close {
+  width: 32px; height: 32px;
+  background: var(--cnt-bg-warm);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.modal-close svg {
+  width: 16px; height: 16px;
+  stroke: var(--cnt-text);
+  fill: none;
+  stroke-width: 2;
+}
+
+/* Calendar */
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.calendar-nav button {
+  width: 32px; height: 32px;
+  background: none; border: 1px solid var(--cnt-border-light);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+
+.calendar-nav button svg {
+  width: 16px; height: 16px;
+  stroke: var(--cnt-text); fill: none; stroke-width: 2;
+}
+
+.calendar-nav span {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cnt-black);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 16px;
+}
+
+.cal-day-header {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--cnt-text-muted);
+  text-transform: uppercase;
+  padding: 6px 0;
+}
+
+.cal-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cnt-text);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: none;
+  background: none;
+  font-family: var(--font-ui);
+}
+
+.cal-day:hover { background: var(--cnt-gold-light); }
+.cal-day.empty { pointer-events: none; }
+.cal-day.past { color: var(--cnt-border); pointer-events: none; }
+.cal-day.selected { background: var(--cnt-black); color: #fff; }
+.cal-day.in-range { background: var(--cnt-gold-light); }
+.cal-day.range-start { background: var(--cnt-gold); color: #fff; }
+.cal-day.range-end { background: var(--cnt-gold); color: #fff; }
+
+/* Guest picker */
+.guest-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--cnt-border-light);
+}
+
+.guest-row:last-child { border-bottom: none; }
+
+.guest-info h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cnt-black);
+}
+
+.guest-info span {
+  font-size: 12px;
+  color: var(--cnt-text-muted);
+}
+
+.guest-stepper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stepper-btn {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid var(--cnt-border);
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--font-ui);
+  font-size: 18px;
+  color: var(--cnt-text);
+}
+
+.stepper-btn:active { border-color: var(--cnt-gold); color: var(--cnt-gold); }
+.stepper-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.stepper-count {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--cnt-black);
+  min-width: 20px;
+  text-align: center;
+}
+
+.modal-apply-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--cnt-black);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: background 0.2s;
+}
+
+.modal-apply-btn:active { background: var(--cnt-gold); }
+
+/* ===== DESTINATION INPUT FLYOUT ===== */
+.dest-flyout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--cnt-bg);
+  z-index: 300;
+  display: none;
+  flex-direction: column;
+}
+
+.dest-flyout.open {
+  display: flex;
+}
+
+.dest-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--cnt-border-light);
+}
+
+.dest-search-bar button {
+  width: 32px; height: 32px;
+  background: none; border: none;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.dest-search-bar button svg {
+  width: 18px; height: 18px;
+  stroke: var(--cnt-text); fill: none; stroke-width: 2;
+}
+
+.dest-search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  color: var(--cnt-text);
+  background: transparent;
+}
+
+.dest-search-bar input::placeholder { color: var(--cnt-text-muted); }
+
+.dest-suggestions {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+.dest-suggestion {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.dest-suggestion:active { background: var(--cnt-bg-warm); }
+
+.dest-suggestion .dest-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.dest-suggestion .dest-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dest-suggestion .dest-text h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cnt-text);
+}
+
+.dest-suggestion .dest-text span {
+  font-size: 12px;
+  color: var(--cnt-text-muted);
+}
+
+/* ===== SECTION TITLES ===== */
+.section {
+  padding: 0 20px;
+  margin-bottom: 28px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cnt-black);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+/* ===== TRENDING DESTINATIONS ===== */
+.dest-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.dest-tile {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dest-tile:active { transform: scale(0.97); }
+.dest-tile { transition: transform 0.12s; }
+
+.dest-tile.featured {
+  grid-column: 1 / -1;
+  height: 140px;
+}
+
+.dest-tile:not(.featured) {
+  height: 130px;
+}
+
+.dest-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+@media (hover: hover) {
+  .dest-tile:hover img { transform: scale(1.05); }
+}
+
+.dest-tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+.dest-tile-info {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  right: 14px;
+  z-index: 2;
+}
+
+.dest-tile-name {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.dest-tile-meta {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  margin-top: 2px;
+}
+
+/* ===== GOLD LIST CAROUSEL ===== */
+.carousel-wrap {
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 20px 4px;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar { display: none; }
+
+.hotel-card {
+  flex: 0 0 260px;
+  scroll-snap-align: start;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--cnt-bg);
+  border: 1px solid var(--cnt-border-light);
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.2s;
+}
+
+.hotel-card:active { transform: scale(0.97); }
+
+@media (hover: hover) {
+  .hotel-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+  .hotel-card:hover .hotel-img img {
+    transform: scale(1.05);
+  }
+}
+
+.hotel-img {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+}
+
+.hotel-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.hotel-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--cnt-gold);
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.trending-badge {
+  background: var(--cnt-black);
+}
+
+.hotel-save {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.hotel-save:active { transform: scale(1.15); }
+
+.hotel-save svg {
+  width: 15px; height: 15px;
+  stroke: var(--cnt-text);
+  fill: none;
+  stroke-width: 2;
+}
+
+.hotel-save.saved svg {
+  fill: var(--cnt-gold);
+  stroke: var(--cnt-gold);
+}
+
+.hotel-body {
+  padding: 12px 14px 14px;
+}
+
+.hotel-name {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--cnt-black);
+  line-height: 1.3;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hotel-location {
+  font-size: 12px;
+  color: var(--cnt-text-secondary);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hotel-location svg {
+  width: 12px; height: 12px;
+  stroke: var(--cnt-text-muted);
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+.hotel-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.rating-score {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 24px;
+  background: #1D6F1D;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 5px 5px 5px 0;
+}
+
+.rating-label {
+  font-size: 12px;
+  color: var(--cnt-text-secondary);
+}
+
+.rating-label strong {
+  color: var(--cnt-text);
+  font-weight: 600;
+}
+
+.hotel-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding-top: 10px;
+  border-top: 1px solid var(--cnt-border-light);
+}
+
+.hotel-price-from {
+  font-size: 11px;
+  color: var(--cnt-text-muted);
+}
+
+.hotel-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cnt-black);
+}
+
+.hotel-price-night {
+  font-size: 11px;
+  color: var(--cnt-text-muted);
+}
+
+.hotel-price-total {
+  font-size: 11px;
+  color: var(--cnt-text-muted);
+  margin-top: 2px;
+}
+
+/* ===== STORIES / GET INSPIRED ===== */
+.story-group {
+  margin-bottom: 24px;
+}
+
+.story-group-label {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--cnt-gold);
+  margin-bottom: 12px;
+}
+
+.story-card {
+  display: flex;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--cnt-border-light);
+  cursor: pointer;
+  transition: background 0.12s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.story-card:last-child { border-bottom: none; }
+.story-card:active { opacity: 0.7; }
+
+.story-thumb {
+  width: 88px;
+  height: 88px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.story-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.story-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.story-tag {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--cnt-gold);
+  margin-bottom: 4px;
+}
+
+.story-title {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--cnt-black);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.story-card-full {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  height: 180px;
+  cursor: pointer;
+  margin-bottom: 12px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.story-card-full:active { transform: scale(0.98); }
+.story-card-full { transition: transform 0.12s; }
+
+.story-card-full img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.story-card-full::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.15) 50%, transparent 100%);
+  pointer-events: none;
+}
+
+.story-card-full .story-full-info {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+  right: 16px;
+  z-index: 2;
+}
+
+.story-card-full .story-full-tag {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--cnt-gold-hover);
+  margin-bottom: 4px;
+}
+
+.story-card-full .story-full-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+.stories-divider {
+  height: 1px;
+  background: var(--cnt-border-light);
+  margin: 24px 0;
+}
+
+/* ===== SEARCH RESULTS PAGE ===== */
+.results-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--cnt-bg);
+  z-index: 250;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.results-view.open {
+  display: flex;
+}
+
+.results-header {
+  flex-shrink: 0;
+  background: var(--cnt-bg);
+  border-bottom: 1px solid var(--cnt-border-light);
+}
+
+.results-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+}
+
+.results-back {
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  border-radius: 50%;
+  transition: background 0.12s;
+}
+
+.results-back:active { background: var(--cnt-bg-warm); }
+
+.results-back svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--cnt-black);
+  fill: none;
+  stroke-width: 2;
+}
+
+.results-search-summary {
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+  padding: 6px 12px;
+  background: var(--cnt-bg-warm);
+  border-radius: 24px;
+  border: 1px solid var(--cnt-border-light);
+}
+
+.results-search-dest {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cnt-black);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.results-search-meta {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--cnt-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.results-filters {
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.results-filters::-webkit-scrollbar { display: none; }
+
+.filter-chip {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 7px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--cnt-border);
+  background: var(--cnt-bg);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--cnt-text);
+  cursor: pointer;
+  transition: all 0.12s;
+  white-space: nowrap;
+}
+
+.filter-chip:active { background: var(--cnt-bg-warm); }
+
+.filter-chip svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+
+.filter-chip.active {
+  background: var(--cnt-black);
+  color: #fff;
+  border-color: var(--cnt-black);
+}
+
+.results-count {
+  padding: 6px 20px 10px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--cnt-text-muted);
+  flex-shrink: 0;
+}
+
+.results-count strong {
+  color: var(--cnt-text);
+}
+
+.results-list {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 0 20px;
+}
+
+.results-list::-webkit-scrollbar { display: none; }
+
+.result-card {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--cnt-border-light);
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.result-card:active { background: var(--cnt-bg-warm); }
+
+.result-card-img {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.result-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.result-card-badges {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 6px;
+}
+
+.result-badge {
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: var(--cnt-gold);
+  color: #fff;
+}
+
+.result-badge.cnt-pick {
+  background: var(--cnt-black);
+}
+
+.result-save {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.result-save svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--cnt-text);
+  fill: none;
+  stroke-width: 1.8;
+}
+
+.result-save.saved svg {
+  fill: #e74c3c;
+  stroke: #e74c3c;
+}
+
+.result-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.result-card-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--cnt-black);
+  line-height: 1.3;
+}
+
+.result-card-location {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--cnt-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.result-card-location svg {
+  width: 12px;
+  height: 12px;
+  stroke: var(--cnt-text-muted);
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+.result-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.result-rating-score {
+  background: var(--cnt-black);
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  line-height: 1.3;
+}
+
+.result-rating-text {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--cnt-text-secondary);
+}
+
+.result-rating-text strong {
+  color: var(--cnt-text);
+}
+
+.result-card-amenities {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.result-amenity {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--cnt-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.result-amenity svg {
+  width: 12px;
+  height: 12px;
+  stroke: var(--cnt-text-muted);
+  fill: none;
+  stroke-width: 2;
+}
+
+.result-card-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.result-price-from {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--cnt-text-muted);
+}
+
+.result-price-amount {
+  font-family: var(--font-ui);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--cnt-black);
+}
+
+.result-price-night {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--cnt-text-muted);
+}
+
+.result-price-total {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--cnt-text-muted);
+  margin-top: 1px;
+}
+
+.result-card-cta {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--cnt-gold);
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.results-map-fab {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: var(--cnt-black);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  z-index: 10;
+}
+
+.results-map-fab svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+
+/* ===== FILTERS PANEL ===== */
+.filters-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--cnt-bg);
+  z-index: 260;
+  display: none;
+  flex-direction: column;
+}
+
+.filters-panel.open {
+  display: flex;
+}
+
+.filters-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--cnt-border-light);
+  flex-shrink: 0;
+}
+
+.filters-panel-header h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--cnt-black);
+}
+
+.filters-panel-close {
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.filters-panel-close:active { background: var(--cnt-bg-warm); }
+
+.filters-panel-close svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--cnt-black);
+  fill: none;
+  stroke-width: 2;
+}
+
+.filters-panel-body {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 0 20px;
+}
+
+.filters-panel-body::-webkit-scrollbar { display: none; }
+
+.filter-section {
+  padding: 20px 20px 0;
+  border-bottom: 1px solid var(--cnt-border-light);
+}
+
+.filter-section:last-child { border-bottom: none; }
+
+.filter-section-title {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--cnt-black);
+  margin-bottom: 14px;
+}
+
+.filter-price-range {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.filter-price-input {
+  flex: 1;
+  position: relative;
+}
+
+.filter-price-input label {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--cnt-text-muted);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.filter-price-input input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--cnt-border);
+  border-radius: 10px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--cnt-text);
+  outline: none;
+  background: var(--cnt-bg);
+  transition: border-color 0.15s;
+}
+
+.filter-price-input input:focus {
+  border-color: var(--cnt-black);
+}
+
+.filter-price-sep {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--cnt-text-muted);
+  padding-top: 16px;
+}
+
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 20px;
+}
+
+.filter-option {
+  padding: 9px 16px;
+  border: 1px solid var(--cnt-border);
+  border-radius: 22px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--cnt-text);
+  background: var(--cnt-bg);
+  cursor: pointer;
+  transition: all 0.12s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.filter-option:active { transform: scale(0.96); }
+
+.filter-option.selected {
+  background: var(--cnt-black);
+  color: #fff;
+  border-color: var(--cnt-black);
+}
+
+.filter-toggles {
+  padding-bottom: 8px;
+}
+
+.filter-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--cnt-border-light);
+}
+
+.filter-toggle-row:last-child { border-bottom: none; }
+
+.filter-toggle-label {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--cnt-text);
+}
+
+.filter-toggle-sub {
+  font-size: 12px;
+  color: var(--cnt-text-muted);
+  margin-top: 2px;
+}
+
+.filter-toggle {
+  position: relative;
+  width: 48px;
+  height: 28px;
+  background: var(--cnt-border);
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.filter-toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.filter-toggle.on {
+  background: var(--cnt-black);
+}
+
+.filter-toggle.on::after {
+  transform: translateX(20px);
+}
+
+.filter-rating-options {
+  display: flex;
+  gap: 8px;
+  padding-bottom: 20px;
+}
+
+.filter-rating-btn {
+  flex: 1;
+  padding: 10px 0;
+  border: 1px solid var(--cnt-border);
+  border-radius: 10px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--cnt-text);
+  background: var(--cnt-bg);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.12s;
+}
+
+.filter-rating-btn:active { transform: scale(0.96); }
+
+.filter-rating-btn.selected {
+  background: var(--cnt-black);
+  color: #fff;
+  border-color: var(--cnt-black);
+}
+
+.filters-panel-footer {
+  flex-shrink: 0;
+  display: flex;
+  gap: 12px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--cnt-border-light);
+  background: var(--cnt-bg);
+}
+
+.filters-reset-btn {
+  flex: 1;
+  padding: 14px;
+  border: 1px solid var(--cnt-border);
+  border-radius: 12px;
+  background: var(--cnt-bg);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cnt-text);
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.filters-reset-btn:active { background: var(--cnt-bg-warm); }
+
+.filters-apply-btn {
+  flex: 2;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: var(--cnt-black);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.filters-apply-btn:active { background: var(--cnt-dark); }
+
+/* ===== DESTINATION PAGE ===== */
+.dest-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--cnt-bg);
+  z-index: 240;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.dest-page.open {
+  display: flex;
+}
+
+.dest-page-header {
+  flex-shrink: 0;
+  background: var(--cnt-bg);
+  border-bottom: 1px solid var(--cnt-border-light);
+}
+
+.dest-page-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+}
+
+.dest-page-back {
+  width: 34px;
+  height: 34px;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.dest-page-back:active { background: var(--cnt-bg-warm); }
+
+.dest-page-back svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--cnt-black);
+  fill: none;
+  stroke-width: 2;
+}
+
+.dest-page-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--cnt-black);
+  flex: 1;
+}
+
+.dest-page-controls {
+  display: flex;
+  gap: 8px;
+  padding: 0 16px 12px;
+}
+
+.dest-page-picker {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--cnt-bg-warm);
+  border: 1px solid var(--cnt-border-light);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.12s;
+}
+
+.dest-page-picker:active {
+  border-color: var(--cnt-border);
+}
+
+.dest-page-picker svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--cnt-text-muted);
+  fill: none;
+  stroke-width: 1.8;
+  flex-shrink: 0;
+}
+
+.dest-page-picker-text {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--cnt-text);
+  line-height: 1.3;
+}
+
+.dest-page-picker-text .picker-label {
+  font-size: 10px;
+  color: var(--cnt-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.dest-page-picker-text .picker-value {
+  font-weight: 500;
+  margin-top: 1px;
+}
+
+.dest-page-picker-text .picker-value.placeholder {
+  color: var(--cnt-text-muted);
+}
+
+.dest-page-filters {
+  display: flex;
+  gap: 8px;
+  padding: 10px 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  border-bottom: 1px solid var(--cnt-border-light);
+}
+
+.dest-page-filters::-webkit-scrollbar { display: none; }
+
+.dest-page-count {
+  padding: 8px 20px 10px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--cnt-text-muted);
+  flex-shrink: 0;
+}
+
+.dest-page-count strong {
+  color: var(--cnt-text);
+}
+
+.dest-page-list {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 0 20px;
+}
+
+.dest-page-list::-webkit-scrollbar { display: none; }
+</style>
+</head>
+<body>
+
+<div class="phone-frame" id="phoneFrame">
+
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="top-bar-logo">
+      <img src="cnt-logo-nav.png" alt="Condé Nast Traveler">
+    </div>
+    <div class="top-bar-right">
+      <button class="top-bar-btn" aria-label="Account">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
+      </button>
+      <button class="top-bar-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <span class="menu-label">Menu</span>
+      <button class="top-bar-btn" aria-label="Menu">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <!-- Header -->
+    <div class="page-header">
+      <h1>Places to Stay</h1>
+      <p>Editor-vetted stays with live pricing and availability.</p>
+    </div>
+
+    <!-- Search Panel -->
+    <div class="search-panel">
+      <div class="search-field" id="destField" onclick="openDestFlyout()">
+        <div class="field-icon">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div class="field-content">
+          <div class="field-label">Destination</div>
+          <div class="field-value placeholder" id="destValue">Where do you want to go?</div>
+        </div>
+      </div>
+      <div class="search-row">
+        <div class="search-field" onclick="openDatePicker()">
+          <div class="field-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="field-content">
+            <div class="field-label">Dates</div>
+            <div class="field-value" id="dateValue">Select dates</div>
+          </div>
+        </div>
+        <div class="search-field" onclick="openGuestPicker()">
+          <div class="field-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="field-content">
+            <div class="field-label">Guests</div>
+            <div class="field-value" id="guestValue">2 guests, 1 room</div>
+          </div>
+        </div>
+      </div>
+      <button class="search-btn" onclick="handleSearch()">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Search
+      </button>
+    </div>
+
+    <!-- Trending Destinations -->
+    <div class="section">
+      <h2 class="section-title">Trending Destinations</h2>
+      <div class="dest-grid" id="destGrid"></div>
+    </div>
+
+    <!-- Gold List 2026 -->
+    <div class="section" style="padding-right: 0;">
+      <h2 class="section-title" style="padding-right: 20px;">Gold List 2026 Hotels</h2>
+      <div class="carousel-wrap">
+        <div class="carousel" id="goldCarousel"></div>
+      </div>
+    </div>
+
+    <!-- Trending Hotels -->
+    <div class="section" style="padding-right: 0;">
+      <h2 class="section-title" style="padding-right: 20px;">Trending Stays</h2>
+      <div class="carousel-wrap">
+        <div class="carousel" id="trendingCarousel"></div>
+      </div>
+    </div>
+
+    <!-- Get Inspired -->
+    <div class="section">
+      <h2 class="section-title">Not Sure Where to Go?</h2>
+
+      <!-- Spring Travel -->
+      <div class="story-group">
+        <div class="story-group-label">Spring Travel</div>
+        <div class="story-card-full">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=360&fit=crop" alt="Coastal hotels" loading="lazy">
+          <div class="story-full-info">
+            <div class="story-full-tag">Destinations</div>
+            <div class="story-full-title">11 Coastal Hotels in the US for a Sunny Spring Break</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">12 Spring Break Villas to Book for Sea, Sun, and Solitude</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Inspiration</span>
+            <div class="story-title">11 Affordable Spring Break Destinations for All Ages</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Family Travel</span>
+            <div class="story-title">The Best Spring Break Destinations for Families</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Inspiration</span>
+            <div class="story-title">Where to Travel This Spring for Ski Season, Film Festivals, or Jazz</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stories-divider"></div>
+
+      <!-- Trending Destinations Stories -->
+      <div class="story-group">
+        <div class="story-group-label">Trending Destinations</div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Destinations</span>
+            <div class="story-title">The Best Hotels in Venice for a Perfect Mix of History and Glamour</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1518659526054-190340b32735?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Destinations</span>
+            <div class="story-title">18 Best Boutique Hotels in Mexico City</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">10 Best Airbnbs in Kyoto</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Destinations</span>
+            <div class="story-title">The Best Hotels in Barcelona, From City Center Boutiques to Secluded Retreats</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stories-divider"></div>
+
+      <!-- Family-Friendly Stays -->
+      <div class="story-group">
+        <div class="story-group-label">Family-Friendly Stays</div>
+        <div class="story-card-full">
+          <img src="https://images.unsplash.com/photo-1561501900-3701fa6a0864?w=600&h=360&fit=crop" alt="Family resorts" loading="lazy">
+          <div class="story-full-info">
+            <div class="story-full-tag">Places to Stay</div>
+            <div class="story-full-title">23 Best Luxury Family Resorts in the US and Caribbean</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">The Best Family-Friendly Resorts in Hawaii, According to a Local</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">11 Family-Friendly Hotels in Los Angeles</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">Family-Friendly European Resorts</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1570639204999-e093bfa76845?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">Family-Friendly Hotels in Seattle With Plenty of Perks</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Hotels and Resorts</span>
+            <div class="story-title">The Best Family-Friendly Hotels in Thailand</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">11 Best Family Hotels in Tokyo, Japan</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">11 Family-Friendly Paris Hotels</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">13 Best New York City Hotels for Families</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stories-divider"></div>
+
+      <!-- Hotel Guides -->
+      <div class="story-group">
+        <div class="story-group-label">Hotel Guides</div>
+        <div class="story-card-full">
+          <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&h=360&fit=crop" alt="Hotel guides" loading="lazy">
+          <div class="story-full-info">
+            <div class="story-full-tag">Inspiration</div>
+            <div class="story-full-title">These Underwater Hotels Bring a New Meaning to "Room With a View"</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Destinations</span>
+            <div class="story-title">15 Editor-Favorite Resorts in the US</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">15 Best New England Resorts From Maine to Rhode Island</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1618773928121-c32f218749e4?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">19 Best Hotels and Resorts in California, From Malibu to Napa Valley</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">9 Rainforest Resorts That Put You Right in the Jungle</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stories-divider"></div>
+
+      <!-- Resorts & All-Inclusives -->
+      <div class="story-group">
+        <div class="story-group-label">Resorts & All-Inclusives</div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Readers' Choice Awards</span>
+            <div class="story-title">The Best Resorts in the Caribbean</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Readers' Choice Awards</span>
+            <div class="story-title">Top Resorts in Southern California</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1501426026826-31c667bdf23d?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">Best All-Inclusive Resorts in Mexico</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">The Cheapest Nicest All-Inclusive Resorts</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">9 Best All-Inclusive Resorts in Barbados</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Islands & Beaches</span>
+            <div class="story-title">The World's Best Private Island Resorts</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1542401886-65d6c61db217?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">The Best Resorts in Arizona</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1535827841776-24afc1e255ac?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">All-Inclusive Resorts in the Dominican Republic</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stories-divider"></div>
+
+      <!-- Rentals & Villas -->
+      <div class="story-group">
+        <div class="story-group-label">Rentals & Villas</div>
+        <div class="story-card-full">
+          <img src="https://images.unsplash.com/photo-1537859749879-62e587da786a?w=600&h=360&fit=crop" alt="Lake Como villas" loading="lazy">
+          <div class="story-full-info">
+            <div class="story-full-tag">Places to Stay</div>
+            <div class="story-full-title">21 Lake Como Villas That Will Make You Feel Like Italian Royalty</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">9 Bachelorette Airbnbs in the Hamptons</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">25 Best Airbnb Lake Houses Across the US</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">The Best Villas in Mallorca for a Dreamy Spanish Vacation</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stories-divider"></div>
+
+      <!-- National Parks Lodging -->
+      <div class="story-group">
+        <div class="story-group-label">National Parks Lodging</div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">11 Best Places to Stay Near Grand Teton National Park</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">11 Best Places to Stay Near Capitol Reef National Park</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1533577116850-9cc66cad8a9b?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">Where to Stay Near Big Bend, West Texas's Stunning National Park</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">27 Places to Stay Near Acadia National Park</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">The Best Places to Stay in Banff National Park</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">The Best Places to Stay In and Around Yellowstone National Park</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">Places to Stay</span>
+            <div class="story-title">The Best Places to Stay in and Around Yosemite National Park</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stories-divider"></div>
+
+      <!-- First In: Just-Opened Hotels -->
+      <div class="story-group">
+        <div class="story-group-label">First In: Just-Opened Hotels</div>
+        <div class="story-card-full">
+          <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&h=360&fit=crop" alt="First In" loading="lazy">
+          <div class="story-full-info">
+            <div class="story-full-tag">First In</div>
+            <div class="story-full-title">Kona Village, a Rosewood Resort: First In</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">First In</span>
+            <div class="story-title">Inkaterra Cabo Blanco: First In</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">First In</span>
+            <div class="story-title">The Inn at Sundance Mountain Resort: First In</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">First In</span>
+            <div class="story-title">Naples Beach Club, a Four Seasons Resort: First In</div>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="story-thumb"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=176&h=176&fit=crop" alt="" loading="lazy"></div>
+          <div class="story-text">
+            <span class="story-tag">First Guest</span>
+            <div class="story-title">SHA Wellness Clinic Mexico: First Guest</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Destination Page -->
+  <div class="dest-page" id="destPage">
+    <div class="dest-page-header">
+      <div class="dest-page-nav">
+        <button class="dest-page-back" onclick="closeDestPage()" aria-label="Back">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="dest-page-title" id="destPageTitle">Lisbon</div>
+      </div>
+      <div class="dest-page-controls">
+        <div class="dest-page-picker" onclick="openDatePicker()">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <div class="dest-page-picker-text">
+            <div class="picker-label">Dates</div>
+            <div class="picker-value placeholder" id="destPageDates">Add dates</div>
+          </div>
+        </div>
+        <div class="dest-page-picker" onclick="openGuestPicker()">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <div class="dest-page-picker-text">
+            <div class="picker-label">Guests</div>
+            <div class="picker-value" id="destPageGuests">2 guests, 1 room</div>
+          </div>
+        </div>
+      </div>
+      <div class="dest-page-filters">
+        <button class="filter-chip" onclick="openFiltersPanel()">
+          <svg viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="8" cy="6" r="2" fill="currentColor"/><circle cx="16" cy="12" r="2" fill="currentColor"/><circle cx="10" cy="18" r="2" fill="currentColor"/></svg>
+          Filters
+        </button>
+        <button class="filter-chip" onclick="this.classList.toggle('active')">
+          <svg viewBox="0 0 24 24"><path d="M3 6h18M6 12h12M9 18h6"/></svg>
+          Sort
+        </button>
+        <button class="filter-chip" onclick="this.classList.toggle('active')">CNT Picks</button>
+        <button class="filter-chip" onclick="this.classList.toggle('active')">Price range</button>
+        <button class="filter-chip" onclick="this.classList.toggle('active')">Free cancellation</button>
+        <button class="filter-chip" onclick="this.classList.toggle('active')">Guest rating</button>
+        <button class="filter-chip" onclick="this.classList.toggle('active')">Pool</button>
+        <button class="filter-chip" onclick="this.classList.toggle('active')">Spa</button>
+        <button class="filter-chip" onclick="this.classList.toggle('active')">Breakfast included</button>
+      </div>
+    </div>
+    <div class="dest-page-count" id="destPageCount"><strong>210+</strong> stays in <strong>Lisbon</strong></div>
+    <div class="dest-page-list" id="destPageList"></div>
+    <button class="results-map-fab">
+      <svg viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+      Map
+    </button>
+  </div>
+
+  <!-- Search Results View -->
+  <div class="results-view" id="resultsView">
+    <div class="results-header">
+      <div class="results-nav">
+        <button class="results-back" onclick="closeResults()" aria-label="Back">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <div class="results-search-summary" onclick="closeResults()">
+          <div class="results-search-dest" id="resultsDest">Lisbon, Portugal</div>
+          <div class="results-search-meta" id="resultsMeta">Mar 6 – Mar 12 · 2 guests</div>
+        </div>
+      </div>
+      <div class="results-filters">
+        <button class="filter-chip" onclick="openFiltersPanel()">
+          <svg viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="8" cy="6" r="2" fill="currentColor"/><circle cx="16" cy="12" r="2" fill="currentColor"/><circle cx="10" cy="18" r="2" fill="currentColor"/></svg>
+          Filters
+        </button>
+        <button class="filter-chip" onclick="this.classList.toggle('active')">
+          <svg viewBox="0 0 24 24"><path d="M3 6h18M6 12h12M9 18h6"/></svg>
+          Sort
+        </button>
+        <button class="filter-chip" onclick="this.classList.toggle('active')">CNT Picks</button>
+        <button class="filter-chip" onclick="this.classList.toggle('active')">Price range</button>
+        <button class="filter-chip" onclick="this.classList.toggle('active')">Free cancellation</button>
+        <button class="filter-chip" onclick="this.classList.toggle('active')">Guest rating</button>
+        <button class="filter-chip" onclick="this.classList.toggle('active')">Pool</button>
+        <button class="filter-chip" onclick="this.classList.toggle('active')">Spa</button>
+        <button class="filter-chip" onclick="this.classList.toggle('active')">Breakfast included</button>
+        <button class="filter-chip" onclick="this.classList.toggle('active')">Pet-friendly</button>
+        <button class="filter-chip" onclick="this.classList.toggle('active')">Boutique</button>
+        <button class="filter-chip" onclick="this.classList.toggle('active')">Beach</button>
+      </div>
+    </div>
+    <div class="results-count" id="resultsCount"><strong>210+</strong> stays in <strong>Lisbon</strong></div>
+    <div class="results-list" id="resultsList"></div>
+    <button class="results-map-fab">
+      <svg viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+      Map
+    </button>
+
+    <!-- Filters Panel -->
+    <div class="filters-panel" id="filtersPanel">
+      <div class="filters-panel-header">
+        <h3>Filters</h3>
+        <button class="filters-panel-close" onclick="closeFiltersPanel()" aria-label="Close">
+          <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="filters-panel-body">
+
+        <div class="filter-section">
+          <div class="filter-section-title">Price per night</div>
+          <div class="filter-price-range">
+            <div class="filter-price-input">
+              <label>Min price</label>
+              <input type="text" placeholder="$0" value="$0">
+            </div>
+            <span class="filter-price-sep">–</span>
+            <div class="filter-price-input">
+              <label>Max price</label>
+              <input type="text" placeholder="$1000+" value="$1000+">
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-section-title">Guest rating</div>
+          <div class="filter-rating-options">
+            <button class="filter-rating-btn" onclick="this.classList.toggle('selected')">Any</button>
+            <button class="filter-rating-btn" onclick="this.classList.toggle('selected')">7+</button>
+            <button class="filter-rating-btn" onclick="this.classList.toggle('selected')">8+</button>
+            <button class="filter-rating-btn" onclick="this.classList.toggle('selected')">9+</button>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-section-title">Property type</div>
+          <div class="filter-options">
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Hotel</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Boutique hotel</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Resort</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Villa</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Apartment</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">B&B</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Hostel</button>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-section-title">Amenities</div>
+          <div class="filter-options">
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Pool</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Spa</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Free Wi-Fi</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Gym</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Restaurant</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Bar</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Room service</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Parking</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Air conditioning</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Kitchen</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Rooftop</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Terrace</button>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-section-title">Booking flexibility</div>
+          <div class="filter-toggles">
+            <div class="filter-toggle-row">
+              <div>
+                <div class="filter-toggle-label">Free cancellation</div>
+                <div class="filter-toggle-sub">Fully refundable options only</div>
+              </div>
+              <button class="filter-toggle" onclick="this.classList.toggle('on')"></button>
+            </div>
+            <div class="filter-toggle-row">
+              <div>
+                <div class="filter-toggle-label">Reserve now, pay later</div>
+                <div class="filter-toggle-sub">No upfront payment required</div>
+              </div>
+              <button class="filter-toggle" onclick="this.classList.toggle('on')"></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-section-title">Meal plans</div>
+          <div class="filter-options">
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Breakfast included</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Half board</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">All-inclusive</button>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-section-title">Neighbourhood</div>
+          <div class="filter-options">
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Chiado</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Alfama</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Baixa</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Bairro Alto</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Belém</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Príncipe Real</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Santos</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Intendente</button>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <div class="filter-section-title">Accessibility</div>
+          <div class="filter-options">
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Wheelchair accessible</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Elevator</button>
+            <button class="filter-option" onclick="this.classList.toggle('selected')">Roll-in shower</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="filters-panel-footer">
+        <button class="filters-reset-btn" onclick="resetFilters()">Reset</button>
+        <button class="filters-apply-btn" onclick="closeFiltersPanel()">Show 210+ stays</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Destination Flyout -->
+  <div class="dest-flyout" id="destFlyout">
+    <div class="dest-search-bar">
+      <button onclick="closeDestFlyout()" aria-label="Back">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <input type="text" id="destInput" placeholder="Search city or destination" oninput="filterDestinations(this.value)">
+    </div>
+    <div class="dest-suggestions" id="destSuggestions"></div>
+  </div>
+
+</div>
+
+<!-- Date Picker Modal -->
+<div class="modal-overlay" id="dateOverlay" onclick="closeDatePicker()"></div>
+<div class="modal-sheet" id="dateSheet">
+  <div class="modal-header">
+    <h3>Select Dates</h3>
+    <button class="modal-close" onclick="closeDatePicker()">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="calendar-nav">
+    <button onclick="changeMonth(-1)">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <span id="calMonthLabel"></span>
+    <button onclick="changeMonth(1)">
+      <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
+    </button>
+  </div>
+  <div class="calendar-grid" id="calGrid"></div>
+  <button class="modal-apply-btn" onclick="applyDates()">Apply</button>
+</div>
+
+<!-- Guest Picker Modal -->
+<div class="modal-overlay" id="guestOverlay" onclick="closeGuestPicker()"></div>
+<div class="modal-sheet" id="guestSheet">
+  <div class="modal-header">
+    <h3>Guests & Rooms</h3>
+    <button class="modal-close" onclick="closeGuestPicker()">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div id="guestRows"></div>
+  <button class="modal-apply-btn" onclick="applyGuests()">Apply</button>
+</div>
+
+<script>
+// ===== DATA =====
+const destinations = [
+  { name: 'Venice', country: 'Italy', img: 'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=600&h=400&fit=crop', hotels: '280+ stays' },
+  { name: 'Kyoto', country: 'Japan', img: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&h=400&fit=crop', hotels: '190+ stays' },
+  { name: 'Mexico City', country: 'Mexico', img: 'https://images.unsplash.com/photo-1518659526054-190340b32735?w=400&h=400&fit=crop', hotels: '350+ stays' },
+  { name: 'Lisbon', country: 'Portugal', img: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=400&h=400&fit=crop', hotels: '210+ stays' },
+  { name: 'Barcelona', country: 'Spain', img: 'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=400&h=400&fit=crop', hotels: '410+ stays' },
+];
+
+const goldListHotels = [
+  {
+    name: "Claridge's",
+    location: 'London, United Kingdom',
+    img: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=520&h=400&fit=crop',
+    score: 9.4,
+    ratingText: 'Exceptional',
+    reviews: 1243,
+    price: 685,
+    priceTotal: 1370,
+  },
+  {
+    name: 'The Ritz-Carlton, Kyoto',
+    location: 'Kyoto, Japan',
+    img: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=520&h=400&fit=crop',
+    score: 9.6,
+    ratingText: 'Exceptional',
+    reviews: 876,
+    price: 892,
+    priceTotal: 1784,
+  },
+  {
+    name: 'The Venice Venice Hotel',
+    location: 'Venice, Italy',
+    img: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=520&h=400&fit=crop',
+    score: 9.2,
+    ratingText: 'Wonderful',
+    reviews: 634,
+    price: 545,
+    priceTotal: 1090,
+  },
+  {
+    name: 'Lily of the Valley',
+    location: 'La Croix-Valmer, France',
+    img: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=520&h=400&fit=crop',
+    score: 9.3,
+    ratingText: 'Exceptional',
+    reviews: 412,
+    price: 620,
+    priceTotal: 1240,
+  },
+  {
+    name: 'Amangiri',
+    location: 'Canyon Point, Utah',
+    img: 'https://images.unsplash.com/photo-1618773928121-c32f218749e4?w=520&h=400&fit=crop',
+    score: 9.8,
+    ratingText: 'Exceptional',
+    reviews: 328,
+    price: 3300,
+    priceTotal: 6600,
+  },
+  {
+    name: 'Hotel Le Toiny',
+    location: 'St Barthélemy',
+    img: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=520&h=400&fit=crop',
+    score: 9.5,
+    ratingText: 'Exceptional',
+    reviews: 215,
+    price: 1450,
+    priceTotal: 2900,
+  },
+  {
+    name: 'Hermitage Bay',
+    location: 'Antigua & Barbuda',
+    img: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=520&h=400&fit=crop',
+    score: 9.1,
+    ratingText: 'Wonderful',
+    reviews: 389,
+    price: 780,
+    priceTotal: 1560,
+  },
+  {
+    name: 'Ser Casasandra',
+    location: 'Holbox, Mexico',
+    img: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=520&h=400&fit=crop',
+    score: 9.0,
+    ratingText: 'Wonderful',
+    reviews: 267,
+    price: 420,
+    priceTotal: 840,
+  },
+];
+
+const trendingHotels = [
+  {
+    name: 'The Brando',
+    location: 'Tetiaroa, French Polynesia',
+    img: 'https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=520&h=400&fit=crop',
+    score: 9.7,
+    ratingText: 'Exceptional',
+    reviews: 482,
+    price: 2950,
+    priceTotal: 5900,
+  },
+  {
+    name: 'Aman Tokyo',
+    location: 'Tokyo, Japan',
+    img: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=520&h=400&fit=crop',
+    score: 9.5,
+    ratingText: 'Exceptional',
+    reviews: 1105,
+    price: 1120,
+    priceTotal: 2240,
+  },
+  {
+    name: 'Singita Kruger National Park',
+    location: 'Kruger, South Africa',
+    img: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=520&h=400&fit=crop',
+    score: 9.8,
+    ratingText: 'Exceptional',
+    reviews: 197,
+    price: 4200,
+    priceTotal: 8400,
+  },
+  {
+    name: 'Hotel Costes',
+    location: 'Paris, France',
+    img: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=520&h=400&fit=crop',
+    score: 8.9,
+    ratingText: 'Excellent',
+    reviews: 2341,
+    price: 580,
+    priceTotal: 1160,
+  },
+  {
+    name: 'One&Only Reethi Rah',
+    location: 'Maldives',
+    img: 'https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=520&h=400&fit=crop',
+    score: 9.6,
+    ratingText: 'Exceptional',
+    reviews: 743,
+    price: 1890,
+    priceTotal: 3780,
+  },
+  {
+    name: 'The Ned NoMad',
+    location: 'New York, US',
+    img: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=520&h=400&fit=crop',
+    score: 9.1,
+    ratingText: 'Wonderful',
+    reviews: 1567,
+    price: 475,
+    priceTotal: 950,
+  },
+  {
+    name: 'Belmond Hotel Caruso',
+    location: 'Ravello, Italy',
+    img: 'https://images.unsplash.com/photo-1537859749879-62e587da786a?w=520&h=400&fit=crop',
+    score: 9.4,
+    ratingText: 'Exceptional',
+    reviews: 521,
+    price: 1150,
+    priceTotal: 2300,
+  },
+  {
+    name: 'Six Senses Zighy Bay',
+    location: 'Musandam, Oman',
+    img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=520&h=400&fit=crop',
+    score: 9.3,
+    ratingText: 'Exceptional',
+    reviews: 389,
+    price: 820,
+    priceTotal: 1640,
+  },
+];
+
+const allDestSuggestions = [
+  { name: 'Venice', sub: 'Italy', img: 'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=80&h=80&fit=crop' },
+  { name: 'Kyoto', sub: 'Japan', img: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=80&h=80&fit=crop' },
+  { name: 'Mexico City', sub: 'Mexico', img: 'https://images.unsplash.com/photo-1518659526054-190340b32735?w=80&h=80&fit=crop' },
+  { name: 'Lisbon', sub: 'Portugal', img: 'https://images.unsplash.com/photo-1585208798174-6cedd86e019a?w=80&h=80&fit=crop' },
+  { name: 'Barcelona', sub: 'Spain', img: 'https://images.unsplash.com/photo-1583422409516-2895a77efded?w=80&h=80&fit=crop' },
+  { name: 'Paris', sub: 'France', img: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=80&h=80&fit=crop' },
+  { name: 'London', sub: 'United Kingdom', img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=80&h=80&fit=crop' },
+  { name: 'Tokyo', sub: 'Japan', img: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=80&h=80&fit=crop' },
+  { name: 'New York', sub: 'New York, US', img: 'https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=80&h=80&fit=crop' },
+  { name: 'Lake Como', sub: 'Italy', img: 'https://images.unsplash.com/photo-1553452118-621e1f860f43?w=80&h=80&fit=crop' },
+  { name: 'Dubai', sub: 'United Arab Emirates', img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=80&h=80&fit=crop' },
+  { name: 'Bali', sub: 'Indonesia', img: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=80&h=80&fit=crop' },
+  { name: 'Marrakech', sub: 'Morocco', img: 'https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=80&h=80&fit=crop' },
+  { name: 'Amalfi Coast', sub: 'Italy', img: 'https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?w=80&h=80&fit=crop' },
+  { name: 'Cape Town', sub: 'South Africa', img: 'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=80&h=80&fit=crop' },
+  { name: 'Santorini', sub: 'Greece', img: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=80&h=80&fit=crop' },
+  { name: 'Bangkok', sub: 'Thailand', img: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=80&h=80&fit=crop' },
+  { name: 'Sydney', sub: 'Australia', img: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=80&h=80&fit=crop' },
+  { name: 'Istanbul', sub: 'Turkey', img: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=80&h=80&fit=crop' },
+  { name: 'Buenos Aires', sub: 'Argentina', img: 'https://images.unsplash.com/photo-1589909202802-8f4aadce1849?w=80&h=80&fit=crop' },
+];
+
+// ===== STATE =====
+let selectedDest = '';
+let checkIn = null;
+let checkOut = null;
+let calViewDate = new Date();
+let guests = { adults: 2, children: 0, rooms: 1 };
+
+// ===== RENDER DESTINATIONS GRID =====
+function renderDestGrid() {
+  const grid = document.getElementById('destGrid');
+  grid.innerHTML = destinations.map((d, i) => `
+    <div class="dest-tile${i === 0 ? ' featured' : ''}" onclick="selectDestination('${d.name}')">
+      <img src="${d.img}" alt="${d.name}" loading="lazy">
+      <div class="dest-tile-info">
+        <div class="dest-tile-name">${d.name}</div>
+        <div class="dest-tile-meta">${d.country} · ${d.hotels}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ===== RENDER GOLD LIST CAROUSEL =====
+function renderGoldCarousel() {
+  const carousel = document.getElementById('goldCarousel');
+  carousel.innerHTML = goldListHotels.map(h => `
+    <div class="hotel-card">
+      <div class="hotel-img">
+        <img src="${h.img}" alt="${h.name}" loading="lazy">
+        <span class="hotel-badge">Gold List '26</span>
+        <button class="hotel-save" onclick="event.stopPropagation(); this.classList.toggle('saved')" aria-label="Save">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="hotel-body">
+        <div class="hotel-name">${h.name}</div>
+        <div class="hotel-location">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          ${h.location}
+        </div>
+        <div class="hotel-rating">
+          <span class="rating-score">${h.score}</span>
+          <span class="rating-label"><strong>${h.ratingText}</strong> · ${h.reviews.toLocaleString()} reviews</span>
+        </div>
+        <div class="hotel-price-row">
+          <span class="hotel-price-from">from</span>
+          <span class="hotel-price">$${h.price.toLocaleString()}</span>
+          <span class="hotel-price-night">/ night</span>
+        </div>
+        <div class="hotel-price-total">$${h.priceTotal.toLocaleString()} total for 2 nights</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ===== RENDER TRENDING CAROUSEL =====
+function renderTrendingCarousel() {
+  const carousel = document.getElementById('trendingCarousel');
+  carousel.innerHTML = trendingHotels.map(h => `
+    <div class="hotel-card">
+      <div class="hotel-img">
+        <img src="${h.img}" alt="${h.name}" loading="lazy">
+        <span class="hotel-badge trending-badge">Trending</span>
+        <button class="hotel-save" onclick="event.stopPropagation(); this.classList.toggle('saved')" aria-label="Save">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+      <div class="hotel-body">
+        <div class="hotel-name">${h.name}</div>
+        <div class="hotel-location">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          ${h.location}
+        </div>
+        <div class="hotel-rating">
+          <span class="rating-score">${h.score}</span>
+          <span class="rating-label"><strong>${h.ratingText}</strong> · ${h.reviews.toLocaleString()} reviews</span>
+        </div>
+        <div class="hotel-price-row">
+          <span class="hotel-price-from">from</span>
+          <span class="hotel-price">$${h.price.toLocaleString()}</span>
+          <span class="hotel-price-night">/ night</span>
+        </div>
+        <div class="hotel-price-total">$${h.priceTotal.toLocaleString()} total for 2 nights</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ===== DESTINATION FLYOUT =====
+function openDestFlyout() {
+  const flyout = document.getElementById('destFlyout');
+  flyout.classList.add('open');
+  setTimeout(() => document.getElementById('destInput').focus(), 100);
+  renderDestSuggestions(allDestSuggestions);
+}
+
+function closeDestFlyout() {
+  document.getElementById('destFlyout').classList.remove('open');
+}
+
+function renderDestSuggestions(list) {
+  document.getElementById('destSuggestions').innerHTML = list.map(d => `
+    <div class="dest-suggestion" onclick="pickDest('${d.name}')">
+      <div class="dest-icon"><img src="${d.img}" alt="${d.name}"></div>
+      <div class="dest-text">
+        <h4>${d.name}</h4>
+        <span>${d.sub}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterDestinations(q) {
+  const lower = q.toLowerCase();
+  const filtered = allDestSuggestions.filter(d =>
+    d.name.toLowerCase().includes(lower) || d.sub.toLowerCase().includes(lower)
+  );
+  renderDestSuggestions(filtered.length ? filtered : allDestSuggestions);
+}
+
+function pickDest(name) {
+  selectedDest = name;
+  document.getElementById('destValue').textContent = name;
+  document.getElementById('destValue').classList.remove('placeholder');
+  closeDestFlyout();
+}
+
+function selectDestination(name) {
+  pickDest(name);
+  openDestPage(name);
+}
+
+function openDestPage(name) {
+  const dest = destinations.find(d => d.name === name);
+  const stayCount = dest ? dest.hotels.split(' ')[0] : '210+';
+
+  document.getElementById('destPageTitle').textContent = name + ' stays';
+  document.getElementById('destPageCount').innerHTML = `<strong>${stayCount}</strong> stays in <strong>${name}</strong>`;
+  document.getElementById('destPageDates').textContent = 'Add dates';
+  document.getElementById('destPageDates').classList.add('placeholder');
+  document.getElementById('destPageGuests').textContent = `${guests.adults + guests.children} guests, ${guests.rooms} room`;
+
+  const list = document.getElementById('destPageList');
+  list.innerHTML = searchResultsHotels.map(h => {
+    const badgesHtml = h.badges.map(b => {
+      if (b === 'gold-list') return `<span class="result-badge">Gold List '26</span>`;
+      if (b === 'cnt-pick') return `<span class="result-badge cnt-pick">CNT Pick</span>`;
+      return '';
+    }).join('');
+
+    return `
+      <div class="result-card">
+        <div class="result-card-img">
+          <img src="${h.img}" alt="${h.name}" loading="lazy">
+          <div class="result-card-badges">${badgesHtml}</div>
+          <button class="result-save" onclick="event.stopPropagation(); this.classList.toggle('saved')" aria-label="Save">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+        <div class="result-card-body">
+          <div class="result-card-name">${h.name}</div>
+          <div class="result-card-location">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            ${h.neighborhood}
+          </div>
+          <div class="result-card-rating">
+            <span class="result-rating-score">${h.score}</span>
+            <span class="result-rating-text"><strong>${h.ratingText}</strong> · ${h.reviews.toLocaleString()} reviews</span>
+          </div>
+          <div class="result-card-amenities">
+            ${h.amenities.map(a => `<span class="result-amenity">${a}</span>`).join('')}
+          </div>
+          <div class="result-card-price">
+            <span class="result-price-from">from</span>
+            <span class="result-price-amount">$${h.price}</span>
+            <span class="result-price-night">/ night</span>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  list.scrollTop = 0;
+  document.getElementById('phoneFrame').scrollTop = 0;
+  document.getElementById('destPage').classList.add('open');
+}
+
+function closeDestPage() {
+  document.getElementById('destPage').classList.remove('open');
+}
+
+// ===== DATE PICKER =====
+const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const DAY_LABELS = ['Su','Mo','Tu','We','Th','Fr','Sa'];
+
+function openDatePicker() {
+  calViewDate = new Date();
+  document.getElementById('dateOverlay').classList.add('open');
+  document.getElementById('dateSheet').classList.add('open');
+  renderCalendar();
+}
+
+function closeDatePicker() {
+  document.getElementById('dateOverlay').classList.remove('open');
+  document.getElementById('dateSheet').classList.remove('open');
+}
+
+function changeMonth(dir) {
+  calViewDate.setMonth(calViewDate.getMonth() + dir);
+  renderCalendar();
+}
+
+function renderCalendar() {
+  const year = calViewDate.getFullYear();
+  const month = calViewDate.getMonth();
+  document.getElementById('calMonthLabel').textContent = `${MONTH_NAMES[month]} ${year}`;
+
+  const today = new Date();
+  today.setHours(0,0,0,0);
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  let html = DAY_LABELS.map(d => `<span class="cal-day-header">${d}</span>`).join('');
+
+  for (let i = 0; i < firstDay; i++) {
+    html += '<span class="cal-day empty"></span>';
+  }
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const date = new Date(year, month, d);
+    const isPast = date < today;
+    let cls = 'cal-day';
+    if (isPast) cls += ' past';
+
+    if (checkIn && checkOut) {
+      if (date.getTime() === checkIn.getTime()) cls += ' range-start';
+      else if (date.getTime() === checkOut.getTime()) cls += ' range-end';
+      else if (date > checkIn && date < checkOut) cls += ' in-range';
+    } else if (checkIn && date.getTime() === checkIn.getTime()) {
+      cls += ' selected';
+    }
+
+    html += `<button class="${cls}" onclick="pickDate(${year},${month},${d})">${d}</button>`;
+  }
+
+  document.getElementById('calGrid').innerHTML = html;
+}
+
+function pickDate(y, m, d) {
+  const date = new Date(y, m, d);
+  if (!checkIn || (checkIn && checkOut)) {
+    checkIn = date;
+    checkOut = null;
+  } else {
+    if (date <= checkIn) {
+      checkIn = date;
+    } else {
+      checkOut = date;
+    }
+  }
+  renderCalendar();
+}
+
+function applyDates() {
+  if (checkIn) {
+    const fmt = d => `${d.getDate()} ${MONTH_NAMES[d.getMonth()].slice(0,3)}`;
+    const text = checkOut ? `${fmt(checkIn)} – ${fmt(checkOut)}` : fmt(checkIn);
+    document.getElementById('dateValue').textContent = text;
+  }
+  closeDatePicker();
+}
+
+// ===== GUEST PICKER =====
+function openGuestPicker() {
+  document.getElementById('guestOverlay').classList.add('open');
+  document.getElementById('guestSheet').classList.add('open');
+  renderGuestRows();
+}
+
+function closeGuestPicker() {
+  document.getElementById('guestOverlay').classList.remove('open');
+  document.getElementById('guestSheet').classList.remove('open');
+}
+
+function renderGuestRows() {
+  const rows = [
+    { key: 'adults', label: 'Adults', sub: '', min: 1, max: 14 },
+    { key: 'children', label: 'Children', sub: 'Ages 0–17', min: 0, max: 6 },
+    { key: 'rooms', label: 'Rooms', sub: '', min: 1, max: 9 },
+  ];
+
+  document.getElementById('guestRows').innerHTML = rows.map(r => `
+    <div class="guest-row">
+      <div class="guest-info">
+        <h4>${r.label}</h4>
+        ${r.sub ? `<span>${r.sub}</span>` : ''}
+      </div>
+      <div class="guest-stepper">
+        <button class="stepper-btn" onclick="adjustGuest('${r.key}',-1)" ${guests[r.key] <= r.min ? 'disabled' : ''}>−</button>
+        <span class="stepper-count">${guests[r.key]}</span>
+        <button class="stepper-btn" onclick="adjustGuest('${r.key}',1)" ${guests[r.key] >= r.max ? 'disabled' : ''}>+</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function adjustGuest(key, dir) {
+  guests[key] += dir;
+  renderGuestRows();
+}
+
+function applyGuests() {
+  const total = guests.adults + guests.children;
+  const label = `${total} guest${total !== 1 ? 's' : ''}, ${guests.rooms} room${guests.rooms !== 1 ? 's' : ''}`;
+  document.getElementById('guestValue').textContent = label;
+  closeGuestPicker();
+}
+
+// ===== SEARCH RESULTS DATA =====
+const searchResultsHotels = [
+  {
+    name: 'Bairro Alto Hotel',
+    neighborhood: 'Chiado, Lisbon',
+    img: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop',
+    score: 9.3,
+    ratingText: 'Exceptional',
+    reviews: 1847,
+    price: 342,
+    badges: ['cnt-pick'],
+    amenities: ['Free Wi-Fi', 'Rooftop bar', 'Spa'],
+  },
+  {
+    name: 'The Ivens',
+    neighborhood: 'Baixa, Lisbon',
+    img: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&h=400&fit=crop',
+    score: 9.5,
+    ratingText: 'Exceptional',
+    reviews: 923,
+    price: 415,
+    badges: ['cnt-pick', 'gold-list'],
+    amenities: ['Free Wi-Fi', 'Pool', 'Restaurant'],
+  },
+  {
+    name: 'Memmo Alfama',
+    neighborhood: 'Alfama, Lisbon',
+    img: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&h=400&fit=crop',
+    score: 9.1,
+    ratingText: 'Wonderful',
+    reviews: 1456,
+    price: 278,
+    badges: ['cnt-pick'],
+    amenities: ['Pool', 'Terrace', 'Free breakfast'],
+  },
+  {
+    name: 'Torel Palace Lisbon',
+    neighborhood: 'São José, Lisbon',
+    img: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&h=400&fit=crop',
+    score: 9.0,
+    ratingText: 'Wonderful',
+    reviews: 687,
+    price: 195,
+    badges: [],
+    amenities: ['Pool', 'Garden', 'Free Wi-Fi'],
+  },
+  {
+    name: 'Pestana Palace Lisboa',
+    neighborhood: 'Alcântara, Lisbon',
+    img: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&h=400&fit=crop',
+    score: 9.4,
+    ratingText: 'Exceptional',
+    reviews: 2103,
+    price: 389,
+    badges: ['gold-list'],
+    amenities: ['Pool', 'Spa', 'Historic palace'],
+  },
+  {
+    name: 'Santiago de Alfama',
+    neighborhood: 'Alfama, Lisbon',
+    img: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&h=400&fit=crop',
+    score: 9.2,
+    ratingText: 'Wonderful',
+    reviews: 1089,
+    price: 264,
+    badges: ['cnt-pick'],
+    amenities: ['Restaurant', 'Bar', 'Free Wi-Fi'],
+  },
+  {
+    name: 'Verride Palácio Santa Catarina',
+    neighborhood: 'Santa Catarina, Lisbon',
+    img: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&h=400&fit=crop',
+    score: 9.6,
+    ratingText: 'Exceptional',
+    reviews: 412,
+    price: 520,
+    badges: ['cnt-pick', 'gold-list'],
+    amenities: ['River views', 'Restaurant', 'Spa'],
+  },
+  {
+    name: 'Hotel da Baixa',
+    neighborhood: 'Baixa, Lisbon',
+    img: 'https://images.unsplash.com/photo-1618773928121-c32f218749e4?w=600&h=400&fit=crop',
+    score: 8.7,
+    ratingText: 'Excellent',
+    reviews: 2456,
+    price: 148,
+    badges: [],
+    amenities: ['Free Wi-Fi', 'Central location', 'Bar'],
+  },
+  {
+    name: '1908 Lisboa Hotel',
+    neighborhood: 'Intendente, Lisbon',
+    img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=400&fit=crop',
+    score: 8.9,
+    ratingText: 'Excellent',
+    reviews: 1734,
+    price: 172,
+    badges: [],
+    amenities: ['Rooftop pool', 'Restaurant', 'Free Wi-Fi'],
+  },
+  {
+    name: 'Four Seasons Hotel Ritz Lisbon',
+    neighborhood: 'Marquês de Pombal, Lisbon',
+    img: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=400&fit=crop',
+    score: 9.7,
+    ratingText: 'Exceptional',
+    reviews: 3210,
+    price: 695,
+    badges: ['gold-list'],
+    amenities: ['Spa', 'Pool', 'Fine dining'],
+  },
+];
+
+function renderSearchResults(dest, ciDate, coDate, numGuests, numRooms) {
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const ciStr = ciDate ? `${months[ciDate.getMonth()]} ${ciDate.getDate()}` : '';
+  const coStr = coDate ? `${months[coDate.getMonth()]} ${coDate.getDate()}` : '';
+  const dateStr = ciStr && coStr ? `${ciStr} – ${coStr}` : 'Any dates';
+  const nights = ciDate && coDate ? Math.round((coDate - ciDate) / 86400000) : 6;
+
+  document.getElementById('resultsDest').textContent = dest;
+  document.getElementById('resultsMeta').textContent = `${dateStr} · ${numGuests} guest${numGuests !== 1 ? 's' : ''}`;
+  document.getElementById('resultsCount').innerHTML = `<strong>210+</strong> stays in <strong>${dest.split(',')[0]}</strong>`;
+
+  const list = document.getElementById('resultsList');
+  list.innerHTML = searchResultsHotels.map(h => {
+    const total = h.price * nights;
+    const badgesHtml = h.badges.map(b => {
+      if (b === 'gold-list') return `<span class="result-badge">Gold List '26</span>`;
+      if (b === 'cnt-pick') return `<span class="result-badge cnt-pick">CNT Pick</span>`;
+      return '';
+    }).join('');
+
+    return `
+      <div class="result-card">
+        <div class="result-card-img">
+          <img src="${h.img}" alt="${h.name}" loading="lazy">
+          <div class="result-card-badges">${badgesHtml}</div>
+          <button class="result-save" onclick="event.stopPropagation(); this.classList.toggle('saved')" aria-label="Save">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+        <div class="result-card-body">
+          <div class="result-card-name">${h.name}</div>
+          <div class="result-card-location">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            ${h.neighborhood}
+          </div>
+          <div class="result-card-rating">
+            <span class="result-rating-score">${h.score}</span>
+            <span class="result-rating-text"><strong>${h.ratingText}</strong> · ${h.reviews.toLocaleString()} reviews</span>
+          </div>
+          <div class="result-card-amenities">
+            ${h.amenities.map(a => `<span class="result-amenity">${a}</span>`).join('')}
+          </div>
+          <div class="result-card-price">
+            <span class="result-price-from">from</span>
+            <span class="result-price-amount">$${h.price}</span>
+            <span class="result-price-night">/ night</span>
+          </div>
+          <div class="result-price-total">$${total.toLocaleString()} total for ${nights} night${nights !== 1 ? 's' : ''}</div>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  list.scrollTop = 0;
+}
+
+function openResults() {
+  document.getElementById('resultsView').classList.add('open');
+}
+
+function closeResults() {
+  document.getElementById('resultsView').classList.remove('open');
+}
+
+function openFiltersPanel() {
+  document.getElementById('filtersPanel').classList.add('open');
+}
+
+function closeFiltersPanel() {
+  document.getElementById('filtersPanel').classList.remove('open');
+}
+
+function resetFilters() {
+  document.querySelectorAll('#filtersPanel .filter-option.selected').forEach(el => el.classList.remove('selected'));
+  document.querySelectorAll('#filtersPanel .filter-rating-btn.selected').forEach(el => el.classList.remove('selected'));
+  document.querySelectorAll('#filtersPanel .filter-toggle.on').forEach(el => el.classList.remove('on'));
+  const inputs = document.querySelectorAll('#filtersPanel .filter-price-input input');
+  if (inputs[0]) inputs[0].value = '$0';
+  if (inputs[1]) inputs[1].value = '$1000+';
+}
+
+// ===== SEARCH =====
+function handleSearch() {
+  const dest = selectedDest || 'Lisbon';
+  const g = guests.adults + guests.children;
+  renderSearchResults(dest + ', Portugal', checkIn, checkOut, g, guests.rooms);
+  openResults();
+}
+
+// ===== INIT =====
+renderDestGrid();
+renderGoldCarousel();
+renderTrendingCarousel();
+</script>
+
+</body>
+</html>
